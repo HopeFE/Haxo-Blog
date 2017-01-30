@@ -2,7 +2,7 @@
 layout: _posts
 title: 'Axios的配置'
 date: 2017-01-29 20:25:08
-tags: Axios Vue
+tags: [Axio,Vue]
 thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1485695935&di=893ea3b0f980a7ae6f2e4f22a67cf642&src=http://youimg1.c-ctrip.com/target/fd/tg/g2/M01/31/39/CghzgFTcr92AXMEmAAFpIhxHKMs279.jpg
 ---
 
@@ -218,7 +218,7 @@ axios({
 ```
 
 # 一定要看
-因为这里我使用的`Promise`,所以在安卓4.4.3一下的手机还是不支持Promise的，所以会报错。需要引入` npm install babel-polyfill`，在入口文件上加上即可。
+因为这里我使用的`Promise`,所以在安卓4.4.3一下的手机还是不支持Promise的，所以会报错。需要引入` npm install babel-polyfill`和` npm install babel-runtime`，在入口文件上加上即可。
 ``` javascript
 import 'babel-polyfill' 
 ```

@@ -297,7 +297,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Axios-Vue/">Axios Vue</a>
+        <a class="post_tag-link" href="/tags/Axio/">Axio</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Vue/">Vue</a>
     </ul>
     
 
@@ -307,6 +307,16 @@
     <span class="visuallyhidden">share</span>
 </button>
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/01/29/Axios的配置/" class="leancloud-views_num" data-flag-title="Axios的配置">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
     
 
     
@@ -411,7 +421,7 @@
 <p>如果发生这些错误了我要结束当前的Promise所以返回一个<code>Promise.reject(res)</code>，停止Promise队列下面的操作,如果有对于Promise不熟悉的童鞋请自行搜索<code>Promise</code>(这里还遇到了一个小坑最后会介绍)</p>
 <h1 id="我的配置"><a href="#我的配置" class="headerlink" title="我的配置"></a>我的配置</h1><p>好了介绍了这么多介绍下我的axios配置的文件设置吧,这个文件名是<code>config/http.js</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></div><div class="line"><span class="keyword">import</span> qs <span class="keyword">from</span> <span class="string">'qs'</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> _ <span class="keyword">from</span> <span class="string">'./whole'</span></div><div class="line"></div><div class="line">axios.defaults.timeout = <span class="number">5000</span>;</div><div class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded;charset=UTF-8'</span>;</div><div class="line">axios.defaults.baseURL = <span class="string">'http://www.guinaben.com:8070'</span>;</div><div class="line"><span class="comment">// axios.defaults.baseURL = 'http://192.168.1.129:8383';</span></div><div class="line"></div><div class="line"><span class="comment">//POST传参序列化</span></div><div class="line">axios.interceptors.request.use(<span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span>(config.method  === <span class="string">'post'</span>)&#123;</div><div class="line">    config.data = qs.stringify(config.data);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> config;</div><div class="line">&#125;,(error) =&gt;&#123;</div><div class="line">   _.toast(<span class="string">"错误的传参"</span>);</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//code状态码200判断</span></div><div class="line">axios.interceptors.response.use(<span class="function">(<span class="params">res</span>) =&gt;</span>&#123;</div><div class="line">  <span class="keyword">if</span>(res.data.code != <span class="string">'200'</span>)&#123;</div><div class="line">    _.toast(res.data.msg);</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(res);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> res;</div><div class="line">&#125;, (error) =&gt; &#123;</div><div class="line">  _.toast(<span class="string">"网络异常"</span>);</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> axios;</div></pre></td></tr></table></figure></p>
 <p>发起的请求<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'config/http'</span></div><div class="line"></div><div class="line">axios(&#123;</div><div class="line">  <span class="attr">method</span>:<span class="string">'get'</span>,</div><div class="line">  <span class="attr">url</span>: <span class="string">'xxxx/xxxxx'</span>,</div><div class="line">  <span class="attr">params</span>: &#123;</div><div class="line">    <span class="string">"textbook_id"</span>:id,</div><div class="line">    <span class="string">"token"</span>:token</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">.then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">  resolve(response);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line">axios(&#123;</div><div class="line">  <span class="attr">method</span>:<span class="string">'post'</span>,</div><div class="line">  <span class="attr">url</span>: <span class="string">'teacher/pwd/resetByMobile'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">   <span class="string">"textbook_id"</span>:id,</div><div class="line">    <span class="string">"token"</span>:token</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">.then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</div><div class="line">    resolve(response);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h1 id="一定要看"><a href="#一定要看" class="headerlink" title="一定要看"></a>一定要看</h1><p>因为这里我使用的<code>Promise</code>,所以在安卓4.4.3一下的手机还是不支持Promise的，所以会报错。需要引入<code>npm install babel-polyfill</code>，在入口文件上加上即可。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></div></pre></td></tr></table></figure></p>
+<h1 id="一定要看"><a href="#一定要看" class="headerlink" title="一定要看"></a>一定要看</h1><p>因为这里我使用的<code>Promise</code>,所以在安卓4.4.3一下的手机还是不支持Promise的，所以会报错。需要引入<code>npm install babel-polyfill</code>和<code>npm install babel-runtime</code>，在入口文件上加上即可。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span></div></pre></td></tr></table></figure></p>
 <h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>下一篇将带来Vuex2和axios的配合，希望此篇能带给大家帮助。</p>
 
     
@@ -425,6 +435,30 @@
                 <!-- Post Comments -->
                 
                     
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://ygxdxx.coding.me/2017/01/29/Axios的配置/"
+        data-title="Axios的配置">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
 
 
 
@@ -676,6 +710,16 @@ It will not impact the appearance and can give developers a lot of support :)
 
     <!-- Telegram -->
     
+
+     <!-- coding -->
+
+    
+        <a href="https://coding.net/u/ygxdxx" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-coding.png);">
+                <span class="visuallyhidden">coding</span>
+            </button><!--
+     --></a>
+    
 </div>
 
 
@@ -741,9 +785,111 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize("v3gFPp6IXkBUNpa5uzkbGhmA-gzGzoHsz", "Wrvunr7zaxpEddYe8t6SvtuI");
+    </script>
+    <script>
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
 
 
 
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'Blog-Hope'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
 
 
 
@@ -753,6 +899,106 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 <!-- Local Search-->
+
+    <script>
+    var searchFunc = function(path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
+
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
 
 
 <!-- Window Load-->
