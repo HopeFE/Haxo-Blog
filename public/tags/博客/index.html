@@ -12,7 +12,7 @@
         
             标签: 博客 | 
         
-        Hope&#39;s BLOG
+        Hope&#39;s Blog
     </title>
 
     <!-- Favicons -->
@@ -24,10 +24,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="Hope">
-    <meta name="description" content="null">
-    <meta name="keywords" content="null">
+    <meta name="theme-color" content="#BDC3C7">
+    <meta name="author" content="李颖琨">
+    <meta name="description" content="李颖琨的网络日志">
+    <meta name="keywords" content="李颖琨的网络日志">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -43,13 +43,13 @@
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Hope&#39;s BLOG">
+    <meta name="apple-mobile-web-app-title" content="Hope&#39;s Blog">
 
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://ygxdxx.coding.me">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: 博客 | Hope&#39;s BLOG">
-    <meta property="og:description" content="null">
+    <meta property="og:title" content="标签: 博客 | Hope&#39;s Blog">
+    <meta property="og:description" content="李颖琨的网络日志">
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -72,7 +72,7 @@
     }
 
     a {
-        color: #00838F;
+        color: #16A085;
     }
 
     .mdl-card__media,
@@ -82,13 +82,13 @@
     #scheme-Paradox .sidebar_archives-count,
     #scheme-Paradox .sidebar-colored .sidebar-header,
     #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #0097A7 !important;
+        background-color: #95A5A6 !important;
     }
 
     /* Sidebar User Drop Down Menu Text Color */
     #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
     #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-        color: #0097A7 !important;
+        color: #95A5A6 !important;
     }
 
     #post_entry-right-info,
@@ -101,29 +101,29 @@
     .sidebar-colored .sidebar-nav > .open > a:hover,
     .sidebar-colored .sidebar-nav > .open > a:focus,
     #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-        color: #0097A7 !important;
+        color: #95A5A6 !important;
     }
 
     .toTop {
-        background: #757575 !important;
+        background: #95A5A6 !important;
     }
 
     .material-layout .material-post>.material-nav,
     .material-layout .material-index>.material-nav,
     .material-nav a {
-        color: #757575;
+        color: #95A5A6;
     }
 
     #scheme-Paradox .MD-burger-layer {
-        background-color: #757575;
+        background-color: #95A5A6;
     }
 
     #scheme-Paradox #post-toc-trigger-btn {
-        color: #757575;
+        color: #95A5A6;
     }
 
     .post-toc a:hover {
-        color: #00838F;
+        color: #16A085;
         text-decoration: underline;
     }
 </style>
@@ -166,7 +166,7 @@
 
     <script src="/js/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="/css/highlight/solarized-white.css">
+    <link rel="stylesheet" href="/css/highlight/atom-one-dark.css">
 
     <!-- UC Browser Compatible-->
     <script>
@@ -211,10 +211,8 @@
             <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
     <!-- Post Thumbnail -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/hexo-logo.png)">
     
 
         <!-- Post Title -->
@@ -224,7 +222,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-            前言今天鸡年的第一...
+            前言今天鸡年的第一天，说了好久想搭建自己的博客记录开发的日常，结果一拖再拖Orz（拖延症伤不起）。...
         
         &nbsp;&nbsp;&nbsp;
         <span>
@@ -236,10 +234,10 @@
         <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
             <!-- Author Avatar -->
             <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Hope's avatar">
+                <img src="/img/avatar.png" width="44px" height="44px" alt="李颖琨's avatar">
             </div>
             <div>
-                <strong>Hope</strong>
+                <strong>李颖琨</strong>
                 <span>1月 28, 2017</span>
             </div>
         </div>
@@ -276,7 +274,7 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
+        randomNum = Math.floor(Math.random() * 10 + 1);
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
         locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
@@ -312,7 +310,7 @@
 
     <!-- Sidebar Avatar -->
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="Hope's avatar">
+        <img src="/img/avatar.png" alt="李颖琨's avatar">
     </div>
 
     <!-- Sidebar Email -->
@@ -521,7 +519,7 @@ It will not impact the appearance and can give developers a lot of support :)
                 var fd = new Date();
                 document.write(fd.getFullYear());
             </script>
-            &nbsp;Hope's BLOG
+            &nbsp;Hope's Blog
         </div>
 
         <!-- Paradox Footer Right Section -->
@@ -556,14 +554,14 @@ It will not impact the appearance and can give developers a lot of support :)
     NProgress.start();
 
     $('#nprogress .bar').css({
-        'background': '#FF4081'
+        'background': '#BDC3C7'
     });
     $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+        'box-shadow': '0 0 10px #BDC3C7, 0 0 15px #BDC3C7'
     });
     $('#nprogress .spinner-icon').css({
-        'border-top-color': '#FF4081',
-        'border-left-color': '#FF4081'
+        'border-top-color': '#BDC3C7',
+        'border-left-color': '#BDC3C7'
     });
 
     setTimeout(function() {

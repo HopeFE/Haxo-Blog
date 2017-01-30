@@ -3,7 +3,7 @@ layout: _posts
 title: 'Axios的配置'
 date: 2017-01-29 20:25:08
 tags: [Axio,Vue]
-thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1485695935&di=893ea3b0f980a7ae6f2e4f22a67cf642&src=http://youimg1.c-ctrip.com/target/fd/tg/g2/M01/31/39/CghzgFTcr92AXMEmAAFpIhxHKMs279.jpg
+thumbnail: http://pic1.win4000.com/wallpaper/8/5785e47f33574.jpg
 ---
 
 > 以前写Vue项目的时候都是使用vue-resource做为项目ajax库，在11月份的某一天尤大微博的更新表示ajax的库应该是通用的，放弃了对vue-resource的技术支持，推荐使用[axios][1]。
