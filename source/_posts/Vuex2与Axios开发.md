@@ -3,10 +3,10 @@ layout: _posts
 title: 'Vuex2与Axios开发'
 date: 2017-02-01 16:42:40
 tags: [Vuex2,Vue,Axios]
-thumbnail: http://okkula0y9.bkt.clouddn.com/20160201.jpg
+thumbnail: http://okkula0y9.bkt.clouddn.com/201602011.jpg
 ---
 
-# Vuex2和Axios开发那点事
+
 
 > 总结笔者最近在项目中使用Vuex2和Axios的总结和小技巧，方便日后查看。本人能力有限，如有错误还请大大们指正探讨😭。
 

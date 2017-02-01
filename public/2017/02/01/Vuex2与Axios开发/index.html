@@ -25,7 +25,7 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#BDC3C7">
-    <meta name="author" content="李颖琨">
+    <meta name="author" content="Hope">
     <meta name="description" content="李颖琨的网络日志">
     <meta name="keywords" content="李颖琨的网络日志">
 
@@ -226,7 +226,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vuex2和Axios开发那点事"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vuex2和Axios开发那点事</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#阅读前须知"><span class="post-toc-number">2.</span> <span class="post-toc-text">阅读前须知</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vuex2中的Actions"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Vuex2中的Actions</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Axios的配置"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Axios的配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完成一个请求操作"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">完成一个请求操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一点说明"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">一点说明</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#阅读前须知"><span class="post-toc-number">1.</span> <span class="post-toc-text">阅读前须知</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vuex2中的Actions"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Vuex2中的Actions</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Axios的配置"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Axios的配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完成一个请求操作"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">完成一个请求操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一点说明"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">一点说明</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -251,7 +251,7 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/20160201.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/201602011.jpg)">
     
             <p class="article-headline-p">
                 Vuex2与Axios开发
@@ -272,7 +272,7 @@
     </div>
     <!-- Author Name & Date -->
     <div>
-        <strong>李颖琨</strong>
+        <strong>Hope</strong>
         <span>2月 01, 2017</span>
     </div>
 
@@ -332,7 +332,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Vuex2与Axios开发&url=http://ygxdxx.coding.me//2017/02/01/Vuex2与Axios开发/index.html&via=李颖琨" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Vuex2与Axios开发&url=http://ygxdxx.coding.me//2017/02/01/Vuex2与Axios开发/index.html&via=Hope" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -374,7 +374,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="Vuex2和Axios开发那点事"><a href="#Vuex2和Axios开发那点事" class="headerlink" title="Vuex2和Axios开发那点事"></a>Vuex2和Axios开发那点事</h1><blockquote>
+        <blockquote>
 <p>总结笔者最近在项目中使用Vuex2和Axios的总结和小技巧，方便日后查看。本人能力有限，如有错误还请大大们指正探讨😭。</p>
 </blockquote>
 <h1 id="阅读前须知"><a href="#阅读前须知" class="headerlink" title="阅读前须知"></a>阅读前须知</h1><p>接上一篇的<a href="https://ygxdxx.coding.me/2017/01/29/Axios%E7%9A%84%E9%85%8D%E7%BD%AE/">Axios的配置</a>，阅读本文默认您已经掌握了Vuex2的基本语法、Axios的使用配置与方法、Promise的基本语法。（下面将放出参考链接方便大家在有不明白的地方查看）此篇主要叙述我在实际项目过程中Vuex2和Axios的组合操作。</p>
@@ -497,7 +497,7 @@
 
     <!-- Sidebar Avatar -->
     <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="李颖琨's avatar">
+        <img src="/img/avatar.png" alt="Hope's avatar">
     </div>
 
     <!-- Sidebar Email -->
