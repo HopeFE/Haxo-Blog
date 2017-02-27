@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            axios全攻略 | 
+        
+        Hope&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#BDC3C7">
+    <meta name="author" content="Hope">
+    <meta name="description" content="李颖琨的网络日志">
+    <meta name="keywords" content="李颖琨的网络日志">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hope&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://ygxdxx.coding.me">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="axios全攻略 | Hope&#39;s Blog">
+    <meta property="og:description" content="李颖琨的网络日志">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #16A085;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #95A5A6 !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #95A5A6 !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #95A5A6 !important;
+    }
+
+    .toTop {
+        background: #95A5A6 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #95A5A6;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #95A5A6;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #95A5A6;
+    }
+
+    .post-toc a:hover {
+        color: #16A085;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5;
+        }
+
+        /* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/atom-one-dark.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#axios全攻略"><span class="post-toc-number">1.</span> <span class="post-toc-text">axios全攻略</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#引入方式"><span class="post-toc-number">2.</span> <span class="post-toc-text">引入方式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#例子"><span class="post-toc-number">3.</span> <span class="post-toc-text">例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行-GET-请求"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">执行 GET 请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行-POST-请求"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">执行 POST 请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#执行多个并发请求"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">执行多个并发请求</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#axios-API"><span class="post-toc-number">4.</span> <span class="post-toc-text">axios API</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#axios-config"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">axios(config)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#axios-url-config"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">axios(url[, config])</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#请求方法别名"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">请求方法别名</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#并发"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">并发</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建实例"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">创建实例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实例方法"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">实例方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#请求配置"><span class="post-toc-number">5.</span> <span class="post-toc-text">请求配置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置默认值"><span class="post-toc-number">6.</span> <span class="post-toc-text">配置默认值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局axios默认值"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">全局axios默认值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义实例默认值"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">自定义实例默认值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置优先级顺序"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">配置优先级顺序</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#拦截器"><span class="post-toc-number">7.</span> <span class="post-toc-text">拦截器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#消除"><span class="post-toc-number">8.</span> <span class="post-toc-text">消除</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用application-x-www-form-urlencoded格式"><span class="post-toc-number">9.</span> <span class="post-toc-text">使用application / x-www-form-urlencoded格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node-js"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">Node.js</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">10.</span> <span class="post-toc-text">Promise</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720170227141400.jpg?imageView2/1/w/884/h/247)">
+    
+            <p class="article-headline-p">
+                axios全攻略
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Hope</strong>
+        <span>2月 27, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/axios/">axios</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/02/27/axios全攻略/" class="leancloud-views_num" data-flag-title="axios全攻略">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=axios全攻略&url=http://ygxdxx.coding.me//2017/02/27/axios全攻略/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=axios全攻略&url=http://ygxdxx.coding.me//2017/02/27/axios全攻略/index.html&via=Hope" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ygxdxx.coding.me//2017/02/27/axios全攻略/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hope&#39;s Blog&title=axios全攻略&summary=李颖琨的网络日志&pics=http://ygxdxx.coding.me/img/favicon.png&url=http://ygxdxx.coding.me/2017/02/27/axios全攻略/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="axios全攻略"><a href="#axios全攻略" class="headerlink" title="axios全攻略"></a>axios全攻略</h1><blockquote>
+<p>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：</p>
+</blockquote>
+<ul>
+<li>从浏览器中创建 XMLHttpRequest</li>
+<li>从 node.js 发出 http 请求</li>
+<li>支持 Promise API</li>
+<li>拦截请求和响应</li>
+<li>转换请求和响应数据</li>
+<li>取消请求</li>
+<li>自动转换JSON数据</li>
+<li>客户端支持防止 CSRF/XSRF</li>
+</ul>
+<h1 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install axios</div><div class="line">$ cnpm install axios <span class="comment">//taobao源</span></div><div class="line">$ bower install axios</div><div class="line">或者使用cdn：</div><div class="line">&lt;script src=<span class="string">"https://unpkg.com/axios/dist/axios.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><h2 id="执行-GET-请求"><a href="#执行-GET-请求" class="headerlink" title="执行 GET 请求"></a>执行 GET 请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// 向具有指定ID的用户发出请求</div><div class="line">axios.get(&apos;/user?ID=12345&apos;)</div><div class="line">  .then(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(function (error) &#123;</div><div class="line">    console.log(error);</div><div class="line">  &#125;);</div><div class="line">// 也可以通过 params 对象传递参数</div><div class="line">axios.get(&apos;/user&apos;, &#123;</div><div class="line">    params: &#123;</div><div class="line">      ID: 12345</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .then(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(function (error) &#123;</div><div class="line">    console.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h2 id="执行-POST-请求"><a href="#执行-POST-请求" class="headerlink" title="执行 POST 请求"></a>执行 POST 请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">axios.post(&apos;/user&apos;, &#123;</div><div class="line">    firstName: &apos;Fred&apos;,</div><div class="line">    lastName: &apos;Flintstone&apos;</div><div class="line">  &#125;)</div><div class="line">  .then(function (response) &#123;</div><div class="line">    console.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(function (error) &#123;</div><div class="line">    console.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h2 id="执行多个并发请求"><a href="#执行多个并发请求" class="headerlink" title="执行多个并发请求"></a>执行多个并发请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function getUserAccount() &#123;</div><div class="line">  return axios.get(&apos;/user/12345&apos;);</div><div class="line">&#125;</div><div class="line">function getUserPermissions() &#123;</div><div class="line">  return axios.get(&apos;/user/12345/permissions&apos;);</div><div class="line">&#125;</div><div class="line">axios.all([getUserAccount(), getUserPermissions()])</div><div class="line">  .then(axios.spread(function (acct, perms) &#123;</div><div class="line">    //两个请求现已完成</div><div class="line">&#125;));</div></pre></td></tr></table></figure>
+<h1 id="axios-API"><a href="#axios-API" class="headerlink" title="axios API"></a>axios API</h1><p>可以通过将相关配置传递给 axios 来进行请求。</p>
+<h2 id="axios-config"><a href="#axios-config" class="headerlink" title="axios(config)"></a>axios(config)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 发送一个 POST 请求</div><div class="line">axios(&#123;</div><div class="line">  method: &apos;post&apos;,</div><div class="line">  url: &apos;/user/12345&apos;,</div><div class="line">  data: &#123;</div><div class="line">    firstName: &apos;Fred&apos;,</div><div class="line">    lastName: &apos;Flintstone&apos;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="axios-url-config"><a href="#axios-url-config" class="headerlink" title="axios(url[, config])"></a>axios(url[, config])</h2><p>// 发送一个 GET 请求 (GET请求是默认请求模式)<br>axios(‘/user/12345’);</p>
+<h2 id="请求方法别名"><a href="#请求方法别名" class="headerlink" title="请求方法别名"></a>请求方法别名</h2><p>为了方便起见，已经为所有支持的请求方法提供了别名。</p>
+<ul>
+<li>axios.request（config）</li>
+<li>axios.get（url [，config]）</li>
+<li>axios.delete（url [，config]）</li>
+<li>axios.head（url [，config]）</li>
+<li>axios.post（url [，data [，config]]）</li>
+<li>axios.put（url [，data [，config]]）</li>
+<li>axios.patch（url [，data [，config]]）</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>当使用别名方法时，不需要在config中指定url，method和data属性。</p>
+<h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2><p>帮助函数处理并发请求。</p>
+<ul>
+<li>axios.all（iterable）</li>
+<li>axios.spread（callback）</li>
+</ul>
+<h2 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h2><p>您可以使用自定义配置创建axios的新实例。</p>
+<p>axios.create（[config]）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var instance = axios.create(&#123;</div><div class="line">  baseURL: &apos;https://some-domain.com/api/&apos;,</div><div class="line">  timeout: 1000,</div><div class="line">  headers: &#123;&apos;X-Custom-Header&apos;: &apos;foobar&apos;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><p>可用的实例方法如下所示。 指定的配置将与实例配置合并。</p>
+<ul>
+<li>axios＃request（config）</li>
+<li>axios＃get（url [，config]）</li>
+<li>axios＃delete（url [，config]）</li>
+<li>axios＃head（url [，config]）</li>
+<li>axios＃post（url [，data [，config]]）</li>
+<li>axios＃put（url [，data [，config]]）</li>
+<li>axios＃patch（url [，data [，config]]）</li>
+</ul>
+<h1 id="请求配置"><a href="#请求配置" class="headerlink" title="请求配置"></a>请求配置</h1><p>这些是用于发出请求的可用配置选项。 只有url是必需的。 如果未指定方法，请求将默认为GET。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  // `url`是将用于请求的服务器URL</div><div class="line">  url: &apos;/user&apos;,</div><div class="line">  // `method`是发出请求时使用的请求方法</div><div class="line">  method: &apos;get&apos;, // 默认</div><div class="line">  // `baseURL`将被添加到`url`前面，除非`url`是绝对的。</div><div class="line">  // 可以方便地为 axios 的实例设置`baseURL`，以便将相对 URL 传递给该实例的方法。</div><div class="line">  baseURL: &apos;https://some-domain.com/api/&apos;,</div><div class="line">  // `transformRequest`允许在请求数据发送到服务器之前对其进行更改</div><div class="line">  // 这只适用于请求方法&apos;PUT&apos;，&apos;POST&apos;和&apos;PATCH&apos;</div><div class="line">  // 数组中的最后一个函数必须返回一个字符串，一个 ArrayBuffer或一个 Stream</div><div class="line">  transformRequest: [function (data) &#123;</div><div class="line">    // 做任何你想要的数据转换</div><div class="line">    return data;</div><div class="line">  &#125;],</div><div class="line">  // `transformResponse`允许在 then / catch之前对响应数据进行更改</div><div class="line">  transformResponse: [function (data) &#123;</div><div class="line">    // Do whatever you want to transform the data</div><div class="line">    return data;</div><div class="line">  &#125;],</div><div class="line">  // `headers`是要发送的自定义 headers</div><div class="line">  headers: &#123;&apos;X-Requested-With&apos;: &apos;XMLHttpRequest&apos;&#125;,</div><div class="line">  // `params`是要与请求一起发送的URL参数</div><div class="line">  // 必须是纯对象或URLSearchParams对象</div><div class="line">  params: &#123;</div><div class="line">    ID: 12345</div><div class="line">  &#125;,</div><div class="line">  // `paramsSerializer`是一个可选的函数，负责序列化`params`</div><div class="line">  // (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)</div><div class="line">  paramsSerializer: function(params) &#123;</div><div class="line">    return Qs.stringify(params, &#123;arrayFormat: &apos;brackets&apos;&#125;)</div><div class="line">  &#125;,</div><div class="line">  // `data`是要作为请求主体发送的数据</div><div class="line">  // 仅适用于请求方法“PUT”，“POST”和“PATCH”</div><div class="line">  // 当没有设置`transformRequest`时，必须是以下类型之一：</div><div class="line">  // - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams</div><div class="line">  // - Browser only: FormData, File, Blob</div><div class="line">  // - Node only: Stream</div><div class="line">  data: &#123;</div><div class="line">    firstName: &apos;Fred&apos;</div><div class="line">  &#125;,</div><div class="line">  // `timeout`指定请求超时之前的毫秒数。</div><div class="line">  // 如果请求的时间超过&apos;timeout&apos;，请求将被中止。</div><div class="line">  timeout: 1000,</div><div class="line">  // `withCredentials`指示是否跨站点访问控制请求</div><div class="line">  // should be made using credentials</div><div class="line">  withCredentials: false, // default</div><div class="line">  // `adapter&apos;允许自定义处理请求，这使得测试更容易。</div><div class="line">  // 返回一个promise并提供一个有效的响应（参见[response docs]（＃response-api））</div><div class="line">  adapter: function (config) &#123;</div><div class="line">    /* ... */</div><div class="line">  &#125;,</div><div class="line">  // `auth&apos;表示应该使用 HTTP 基本认证，并提供凭据。</div><div class="line">  // 这将设置一个`Authorization&apos;头，覆盖任何现有的`Authorization&apos;自定义头，使用`headers`设置。</div><div class="line">  auth: &#123;</div><div class="line">    username: &apos;janedoe&apos;,</div><div class="line">    password: &apos;s00pers3cret&apos;</div><div class="line">  &#125;,</div><div class="line">  // “responseType”表示服务器将响应的数据类型</div><div class="line">  // 包括 &apos;arraybuffer&apos;, &apos;blob&apos;, &apos;document&apos;, &apos;json&apos;, &apos;text&apos;, &apos;stream&apos;</div><div class="line">  responseType: &apos;json&apos;, // default</div><div class="line">  //`xsrfCookieName`是要用作 xsrf 令牌的值的cookie的名称</div><div class="line">  xsrfCookieName: &apos;XSRF-TOKEN&apos;, // default</div><div class="line">  // `xsrfHeaderName`是携带xsrf令牌值的http头的名称</div><div class="line">  xsrfHeaderName: &apos;X-XSRF-TOKEN&apos;, // default</div><div class="line">  // `onUploadProgress`允许处理上传的进度事件</div><div class="line">  onUploadProgress: function (progressEvent) &#123;</div><div class="line">    // 使用本地 progress 事件做任何你想要做的</div><div class="line">  &#125;,</div><div class="line">  // `onDownloadProgress`允许处理下载的进度事件</div><div class="line">  onDownloadProgress: function (progressEvent) &#123;</div><div class="line">    // Do whatever you want with the native progress event</div><div class="line">  &#125;,</div><div class="line">  // `maxContentLength`定义允许的http响应内容的最大大小</div><div class="line">  maxContentLength: 2000,</div><div class="line">  // `validateStatus`定义是否解析或拒绝给定的promise</div><div class="line">  // HTTP响应状态码。如果`validateStatus`返回`true`（或被设置为`null` promise将被解析;否则，promise将被</div><div class="line">  // 拒绝。</div><div class="line">  validateStatus: function (status) &#123;</div><div class="line">    return status &gt;= 200 &amp;&amp; status &lt; 300; // default</div><div class="line">  &#125;,</div><div class="line">  // `maxRedirects`定义在node.js中要遵循的重定向的最大数量。</div><div class="line">  // 如果设置为0，则不会遵循重定向。</div><div class="line">  maxRedirects: 5, // 默认</div><div class="line">  // `httpAgent`和`httpsAgent`用于定义在node.js中分别执行http和https请求时使用的自定义代理。</div><div class="line">  // 允许配置类似`keepAlive`的选项，</div><div class="line">  // 默认情况下不启用。</div><div class="line">  httpAgent: new http.Agent(&#123; keepAlive: true &#125;),</div><div class="line">  httpsAgent: new https.Agent(&#123; keepAlive: true &#125;),</div><div class="line">  // &apos;proxy&apos;定义代理服务器的主机名和端口</div><div class="line">  // `auth`表示HTTP Basic auth应该用于连接到代理，并提供credentials。</div><div class="line">  // 这将设置一个`Proxy-Authorization` header，覆盖任何使用`headers`设置的现有的`Proxy-Authorization` 自定义 headers。</div><div class="line">  proxy: &#123;</div><div class="line">    host: &apos;127.0.0.1&apos;,</div><div class="line">    port: 9000,</div><div class="line">    auth: : &#123;</div><div class="line">      username: &apos;mikeymike&apos;,</div><div class="line">      password: &apos;rapunz3l&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  // “cancelToken”指定可用于取消请求的取消令牌</div><div class="line">  // (see Cancellation section below for details)</div><div class="line">  cancelToken: new CancelToken(function (cancel) &#123;</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用 then 时，您将收到如下响应：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">axios.get(&apos;/user/12345&apos;)</div><div class="line">  .then(function(response) &#123;</div><div class="line">    console.log(response.data);</div><div class="line">    console.log(response.status);</div><div class="line">    console.log(response.statusText);</div><div class="line">    console.log(response.headers);</div><div class="line">    console.log(response.config);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="配置默认值"><a href="#配置默认值" class="headerlink" title="配置默认值"></a>配置默认值</h1><p>您可以指定将应用于每个请求的配置默认值。</p>
+<h2 id="全局axios默认值"><a href="#全局axios默认值" class="headerlink" title="全局axios默认值"></a>全局axios默认值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">axios.defaults.baseURL = &apos;https://api.example.com&apos;;</div><div class="line">axios.defaults.headers.common[&apos;Authorization&apos;] = AUTH_TOKEN;</div><div class="line">axios.defaults.headers.post[&apos;Content-Type&apos;] = &apos;application/x-www-form-urlencoded&apos;;</div></pre></td></tr></table></figure>
+<h2 id="自定义实例默认值"><a href="#自定义实例默认值" class="headerlink" title="自定义实例默认值"></a>自定义实例默认值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//在创建实例时设置配置默认值</div><div class="line">var instance = axios.create（&#123;</div><div class="line">   baseURL：&apos;https://api.example.com&apos;</div><div class="line">&#125;）;</div><div class="line"></div><div class="line"> </div><div class="line">//在实例创建后改变默认值</div><div class="line">instance.defaults.headers.common [&apos;Authorization&apos;] = AUTH_TOKEN;</div></pre></td></tr></table></figure>
+<h2 id="配置优先级顺序"><a href="#配置优先级顺序" class="headerlink" title="配置优先级顺序"></a>配置优先级顺序</h2><p>配置将与优先顺序合并。 顺序是lib / defaults.js中的库默认值，然后是实例的defaults属性，最后是请求的config参数。 后者将优先于前者。 这里有一个例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//使用库提供的配置默认值创建实例</div><div class="line">//此时，超时配置值为`0`，这是库的默认值</div><div class="line">var instance = axios.create（）;</div><div class="line"> </div><div class="line">//覆盖库的超时默认值</div><div class="line">//现在所有请求将在超时前等待2.5秒</div><div class="line">instance.defaults.timeout = 2500;</div><div class="line"> </div><div class="line">//覆盖此请求的超时，因为它知道需要很长时间</div><div class="line">instance.get（&apos;/ longRequest&apos;，&#123;</div><div class="line">   timeout：5000</div><div class="line">&#125;）</div></pre></td></tr></table></figure>
+<h1 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h1><p>你可以截取请求或响应在被 then 或者 catch 处理之前</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//添加请求拦截器</div><div class="line">axios.interceptors.request.use（function（config）&#123;</div><div class="line">     //在发送请求之前做某事</div><div class="line">     return config;</div><div class="line">   &#125;，function（error）&#123;</div><div class="line">     //请求错误时做些事</div><div class="line">     return Promise.reject（error）;</div><div class="line">   &#125;）;</div><div class="line"> </div><div class="line">//添加响应拦截器</div><div class="line">axios.interceptors.response.use（function（response）&#123;</div><div class="line">     //对响应数据做些事</div><div class="line">      return response;</div><div class="line">   &#125;，function（error）&#123;</div><div class="line">     //请求错误时做些事</div><div class="line">     return Promise.reject（error）;</div><div class="line">   &#125;）;</div></pre></td></tr></table></figure>
+<p>如果你以后可能需要删除拦截器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var myInterceptor = axios.interceptors.request.use(function () &#123;/*...*/&#125;);</div><div class="line">axios.interceptors.request.eject(myInterceptor);</div></pre></td></tr></table></figure>
+<p>你可以将拦截器添加到axios的自定义实例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var instance = axios.create();</div><div class="line">instance.interceptors.request.use(function () &#123;/*...*/&#125;);</div></pre></td></tr></table></figure>
+<h1 id="消除"><a href="#消除" class="headerlink" title="消除"></a>消除</h1><p>您可以使用取消令牌取消请求。</p>
+<blockquote>
+<p>axios cancel token API基于可取消的promise提议，目前处于阶段1。</p>
+</blockquote>
+<p>您可以使用CancelToken.source工厂创建一个取消令牌，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var CancelToken = axios.CancelToken;</div><div class="line">var source = CancelToken.source（）;</div><div class="line">axios.get(&apos;/user/12345&apos;, &#123;</div><div class="line">  cancelToken: source.token</div><div class="line">&#125;).catch(function(thrown) &#123;</div><div class="line">  if (axios.isCancel(thrown)) &#123;</div><div class="line">    console.log(&apos;Request canceled&apos;, thrown.message);</div><div class="line">  &#125; else &#123;</div><div class="line">    // 处理错误</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">//取消请求（消息参数是可选的）</div><div class="line">source.cancel（&apos;操作被用户取消。&apos;）;</div></pre></td></tr></table></figure></p>
+<p>您还可以通过将执行器函数传递给CancelToken构造函数来创建取消令牌：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var CancelToken = axios.CancelToken;</div><div class="line">var cancel;</div><div class="line"> </div><div class="line">axios.get（&apos;/ user / 12345&apos;，&#123;</div><div class="line">   cancelToken：new CancelToken（function executor（c）&#123;</div><div class="line">     //一个执行器函数接收一个取消函数作为参数</div><div class="line">     cancel = c;</div><div class="line">   &#125;）</div><div class="line">&#125;）;</div><div class="line">// 取消请求</div><div class="line">clear();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：您可以使用相同的取消令牌取消几个请求。</p>
+</blockquote>
+<h1 id="使用application-x-www-form-urlencoded格式"><a href="#使用application-x-www-form-urlencoded格式" class="headerlink" title="使用application / x-www-form-urlencoded格式"></a>使用application / x-www-form-urlencoded格式</h1><p>默认情况下，axios将JavaScript对象序列化为JSON。 要以应用程序/ x-www-form-urlencoded格式发送数据，您可以使用以下选项之一。</p>
+<p>浏览器</p>
+<p>在浏览器中，您可以使用URLSearchParams API，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var params = new URLSearchParams();</div><div class="line">params.append(&apos;param1&apos;, &apos;value1&apos;);</div><div class="line">params.append(&apos;param2&apos;, &apos;value2&apos;);</div><div class="line">axios.post(&apos;/foo&apos;, params);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>请注意，所有浏览器都不支持URLSearchParams，但是有一个polyfill可用（确保polyfill全局环境）。<br>或者，您可以使用qs库对数据进行编码：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var qs = require(&apos;qs&apos;);</div><div class="line">axios.post(&apos;/foo&apos;, qs.stringify(&#123; &apos;bar&apos;: 123 &#125;);</div></pre></td></tr></table></figure>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p>在node.js中，可以使用querystring模块，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var querystring = require(&apos;querystring&apos;);</div><div class="line">axios.post(&apos;http://something.com/&apos;, querystring.stringify(&#123; foo: &apos;bar&apos; &#125;);</div></pre></td></tr></table></figure></p>
+<p>你也可以使用qs库。</p>
+<h1 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h1><p>axios 依赖本机要支持ES6 Promise实现。 如果您的环境不支持ES6 Promises，您可以使用polyfill。<br>axios包括TypeScript定义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import axios from &apos;axios&apos;;</div><div class="line">axios.get(&apos;/user?ID=12345&apos;);</div></pre></td></tr></table></figure>
+<p>axios在很大程度上受到Angular提供的$http服务的启发。 最终，axios努力提供一个在Angular外使用的独立的$http-like服务。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #95A5A6 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #95A5A6 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #95A5A6 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://ygxdxx.coding.me/2017/02/27/axios全攻略/"
+        data-title="axios全攻略">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/02/01/Vuex2与Axios开发/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Hope's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        hopefullstack@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">4</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/u/3312767933" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/HopeFE" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+     <!-- coding -->
+
+    
+        <a href="https://coding.net/u/ygxdxx" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-coding.png);">
+                <span class="visuallyhidden">coding</span>
+            </button><!--
+     --></a>
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Hope's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ba7483bc78f876d2a1780fc963dff0f6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#BDC3C7'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #BDC3C7, 0 0 15px #BDC3C7'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#BDC3C7',
+        'border-left-color': '#BDC3C7'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize("v3gFPp6IXkBUNpa5uzkbGhmA-gzGzoHsz", "Wrvunr7zaxpEddYe8t6SvtuI");
+    </script>
+    <script>
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'Blog-Hope'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+    <script>
+    var searchFunc = function(path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
+
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>
