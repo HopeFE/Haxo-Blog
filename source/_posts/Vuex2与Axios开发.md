@@ -1,6 +1,6 @@
 ---
 layout: _posts
-title: 'Vuex2与Axios开发'
+title: ''
 date: 2017-02-01 16:42:40
 tags: [Vuex2,Vue,Axios]
 thumbnail: http://okkula0y9.bkt.clouddn.com/201602011.jpg

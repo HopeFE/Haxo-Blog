@@ -1,6 +1,6 @@
 ---
 layout: _posts
-title: 'Axios的配置'
+title: ''
 date: 2017-01-29 20:25:08
 tags: [Axio,Vue]
 thumbnail: http://okkula0y9.bkt.clouddn.com/20160130.jpg

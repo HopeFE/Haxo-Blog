@@ -1,5 +1,5 @@
 ---
-title: 开博第一篇纪念
+title: 
 date: 2017-01-28 19:41:19
 tags: [Hexo,博客]
 thumbnail: http://okkula0y9.bkt.clouddn.com/hexo-logo.png
