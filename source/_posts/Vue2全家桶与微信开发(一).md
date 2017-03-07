@@ -3,7 +3,7 @@ layout: _posts
 title: ''
 date: 2017-03-06 16:51:30
 tags: [微信开发,Vue]
-thumbnail: http://okkula0y9.bkt.clouddn.com/2017_3_7_1.jpg
+thumbnail: http://okkula0y9.bkt.clouddn.com/2017_03_07_01.jpg
 ---
 
 > 此项目本身有一个APP了，为了方便将APP和微信端数据打通，需要用户微信和APP用户绑定。在开发的过程中单页面的模式在微信JS API的配置踩了很多坑，特别是IOS。由于本人表述能力和篇幅有限Orz，这里只介绍关键的实现步骤和代码，有些安全的地方和路由地方处理当时比较暴力没有细化，还望交流指导。
@@ -213,6 +213,8 @@ http://example.com/?#/cart/index
 ```
 我们只要将授权目录设置到根目录`http://example.com/`即可
 
+##结尾
+这一篇主要介绍了开发过程中逻辑实现部分的关键点，下一篇为介绍使用Vue在性能上对网页进行优化的关键步骤。
 
   [1]: https://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html
   [2]: http://cn.vuejs.org/guide/
