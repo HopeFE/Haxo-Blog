@@ -8,6 +8,8 @@ thumbnail: http://okkula0y9.bkt.clouddn.com/20160130.jpg
 
 > 以前写Vue项目的时候都是使用vue-resource做为项目ajax库，在11月份的某一天尤大微博的更新表示ajax的库应该是通用的，放弃了对vue-resource的技术支持，推荐使用[axios][1]。
 
+# Axios的配置
+
 ![此处输入图片的描述][2]
 既然尤大推荐的应该有过人之处，好吧于是在新的项目上开始使用Axios,开启这段学习（踩坑）的历程。
 
@@ -15,12 +17,12 @@ thumbnail: http://okkula0y9.bkt.clouddn.com/20160130.jpg
   [1]: https://github.com/mzabriskie/axios
   [2]: http://upload-images.jianshu.io/upload_images/1987062-b3255d564903d3d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
   
-# 安装
+## 安装
 ``` javascript
  npm install axios
 ```
 
-# 使用
+##  使用
 Axios和其他的ajax库都是很类似的，提供了2种使用的方式一种是直接使用实例方法的如：
 下面是实例的所有可用方法，方法中的config会与axios实例中的config合并。（实例可以将一些通用的config先配置好）
 ``` javascript
@@ -36,7 +38,7 @@ axios.get('/user?ID=12345')
   });
 ```
 
-#   Config 配置
+##   Config 配置
 Axios的配置参数很多，我们来一一了解
 
 - url —— 用来向服务器发送请求的url
@@ -66,7 +68,7 @@ paramsSerializer —— params参数序列化器。
 - cancelToken —— cancelToken定义一个 cancel token 用于取消请求
 
 
-# Response 返回
+##  Response 返回
 当我们ajax获取数据成功后会返回一个response对象，它包含了以下内容
 ``` javascript
 
@@ -84,7 +86,7 @@ paramsSerializer —— params参数序列化器。
 }
 ```
 
-# 统一Config配置
+##  统一Config配置
 在接口测试中，我们经常需要切换线上环境和测试环境，这里我们都可以通过Config来配置，这样我们所有的发起的请求都是通过这个基本的URL走了。
 
 ``` javascript
@@ -95,14 +97,14 @@ axios.defaults.baseURL = 'http://www.xxxx.xxx/api';
 ```
 
 
-# Interceptors 拦截器
+##  Interceptors 拦截器
 这里我必须重点介绍，在我们发起大量的请求时候，需要对请求做统一的处理那就用到它了。笔者在使用了`vue-resource`和`axios`之后亲身比较，`axios`的配置更加人性化。
 官方的API上这样介绍
 > You can intercept requests or responses before they are handled by then or catch.
 您可以拦截请求或响应之前，他们处理的操作或者异常
 
 
-## request统一处理操作
+### request统一处理操作
 如果是POST的请求，配置中可不能用`params`字段了，需要使用`data`字段。
 这里有个小地方需要注意，POST的传参需要序列化，不然服务端不会正确的接收哦，会报错。所以这里我们要对request的数据进行一次序列化。这里我用了`qs`,大家需要install一下
 
@@ -125,7 +127,7 @@ axios.interceptors.request.use((config) => {
 ```
 
 
-## response统一处理操作
+### response统一处理操作
 也就是说我们可以统一的在发起请求前，或者获得数据，对其进行统一的操作。这点非常的高效，在笔者的项目中，接口会返回一个code,就和微信API一样，code为200代表返回请求数据正确为其它时就自动跳出弹窗打印消息即可。
 
 ``` javascript
@@ -145,7 +147,7 @@ axios.interceptors.response.use((res) =>{
 如果发生这些错误了我要结束当前的Promise所以返回一个`Promise.reject(res)`，停止Promise队列下面的操作,如果有对于Promise不熟悉的童鞋请自行搜索`Promise`(这里还遇到了一个小坑最后会介绍)
 
 
-# 我的配置
+## 我的配置
 好了介绍了这么多介绍下我的axios配置的文件设置吧,这个文件名是`config/http.js`
 ``` javascript
 
@@ -217,11 +219,8 @@ axios({
   
 ```
 
-# 一定要看
+## 一定要看
 因为这里我使用的`Promise`,所以在安卓4.4.3一下的手机还是不支持Promise的，所以会报错。需要引入` npm install babel-polyfill`和` npm install babel-runtime`，在入口文件上加上即可。
 ``` javascript
 import 'babel-polyfill' 
 ```
-
-# 最后
-下一篇将带来Vuex2和axios的配合，希望此篇能带给大家帮助。

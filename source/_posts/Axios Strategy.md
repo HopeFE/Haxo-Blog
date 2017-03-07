@@ -6,9 +6,8 @@ tags: axios
 thumbnail: http://okkula0y9.bkt.clouddn.com/2017_03_07_3.jpg
 ---
 
-# axios全攻略
-
 > axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：
+# axios全攻略
 
 - 从浏览器中创建 XMLHttpRequest
 - 从 node.js 发出 http 请求
@@ -19,7 +18,7 @@ thumbnail: http://okkula0y9.bkt.clouddn.com/2017_03_07_3.jpg
 - 自动转换JSON数据
 - 客户端支持防止 CSRF/XSRF
 
-# 引入方式
+## 引入方式
 ``` javascript
 $ npm install axios
 $ cnpm install axios /*taobao源*/
@@ -28,9 +27,9 @@ $ bower install axios
 <script src="https:/*unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
-# 例子
+## 例子
 
-## 执行 GET 请求
+### 执行 GET 请求
 ``` javascript
 /* 向具有指定ID的用户发出请求 */
 axios.get('/user?ID=12345')
@@ -54,7 +53,7 @@ axios.get('/user', {
   });
 ```
 
-## 执行 POST 请求
+### 执行 POST 请求
 ``` javascript
 axios.post('/user', {
     firstName: 'Fred',
@@ -68,7 +67,7 @@ axios.post('/user', {
   });
 ```
 
-## 执行多个并发请求
+### 执行多个并发请求
 ``` javascript
 function getUserAccount() {
   return axios.get('/user/12345');
@@ -85,10 +84,10 @@ axios.all([getUserAccount(), getUserPermissions()])
 ```
 
 
-# axios API
+## axios API
 可以通过将相关配置传递给 axios 来进行请求。
 
-## axios(config)
+### axios(config)
 
 ``` javascript
 /* 发送一个 POST 请求*/
@@ -102,13 +101,13 @@ axios({
 });
 ```
 
-## axios(url[, config])
+### axios(url[, config])
 
 
 发送一个 GET 请求 (GET请求是默认请求模式)
 axios('/user/12345');
 
-## 请求方法别名
+### 请求方法别名
 
 为了方便起见，已经为所有支持的请求方法提供了别名。
 
@@ -120,17 +119,17 @@ axios('/user/12345');
 - axios.put(url [，data [，config]])
 - axios.patch(url [，data [，config]])
 
-### 注意
+#### 注意
 当使用别名方法时，不需要在config中指定url，method和data属性。
 
-## 并发
+### 并发
 
 帮助函数处理并发请求。
 
 - axios.all(iterable)
 - axios.spread(callback)
 
-## 创建实例
+### 创建实例
 
 您可以使用自定义配置创建axios的新实例。
 
@@ -144,7 +143,7 @@ var instance = axios.create({
 });
 ```
 
-## 实例方法
+### 实例方法
 
 可用的实例方法如下所示。 指定的配置将与实例配置合并。
 
@@ -156,7 +155,7 @@ var instance = axios.create({
 - axios＃put(url [，data [，config]])
 - axios＃patch(url [，data [，config]])
 
-# 请求配置
+## 请求配置
 
 这些是用于发出请求的可用配置选项。 只有url是必需的。 如果未指定方法，请求将默认为GET。
 
@@ -279,18 +278,18 @@ axios.get('/user/12345')
     console.log(response.config);
 })
 ```
-# 配置默认值
+## 配置默认值
 
 您可以指定将应用于每个请求的配置默认值。
 
-## 全局axios默认值
+### 全局axios默认值
 ``` javascript
 axios.defaults.baseURL = 'https:/*api.example.com';
 axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 ```
 
-## 自定义实例默认值
+### 自定义实例默认值
 
 ``` javascript
 /*在创建实例时设置配置默认值*/
@@ -322,7 +321,7 @@ instance.get('/ longRequest'，{
 })
 ```
 
-# 拦截器
+## 拦截器
 你可以截取请求或响应在被 then 或者 catch 处理之前
 
 ``` javascript
@@ -360,7 +359,7 @@ instance.interceptors.request.use(function () {/*...*/});
 ```
 
 
-# 消除
+## 消除
 
 您可以使用取消令牌取消请求。
 
@@ -400,7 +399,7 @@ clear();
 ```
 > 注意：您可以使用相同的取消令牌取消几个请求。
 
-# 使用application / x-www-form-urlencoded格式
+## 使用application / x-www-form-urlencoded格式
 
 默认情况下，axios将JavaScript对象序列化为JSON。 要以应用程序/ x-www-form-urlencoded格式发送数据，您可以使用以下选项之一。
 
@@ -423,7 +422,7 @@ var qs = require('qs');
 axios.post('/foo', qs.stringify({ 'bar': 123 });
 ```
 
-## Node.js
+### Node.js
 
 在node.js中，可以使用querystring模块，如下所示：
 ``` javascript
@@ -433,7 +432,7 @@ axios.post('http:/*something.com/', querystring.stringify({ foo: 'bar' });
 
 你也可以使用qs库。
 
-# Promise
+## Promise
 axios 依赖本机要支持ES6 Promise实现。 如果您的环境不支持ES6 Promises，您可以使用polyfill。
 axios包括TypeScript定义。
 
