@@ -6,8 +6,6 @@ tags: [Vuex2,Vue,Axios]
 thumbnail: http://okkula0y9.bkt.clouddn.com/201602011.jpg
 ---
 
-
-
 > 总结笔者最近在项目中使用Vuex2和Axios的总结和小技巧，方便日后查看。本人能力有限，如有错误还请大大们指正探讨😭。
 
 # 阅读前须知
