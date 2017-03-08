@@ -42,6 +42,10 @@
   top: 140px;
 }
 
+#scheme-Paradox .article-headline-p a{
+  font-size:0;
+}
+
 #scheme-Paradox #author-avatar{
   width: 44px;
   height: 44px;

@@ -1,13 +1,13 @@
 ---
 layout: '[_posts]'
-title: 
+title: 'Axios全攻略'
 date: 2017-02-27 14:08:19
 tags: axios
 thumbnail: http://okkula0y9.bkt.clouddn.com/2017_03_07_3.jpg
 ---
 
 > axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：
-# axios全攻略
+# Axios全攻略
 
 - 从浏览器中创建 XMLHttpRequest
 - 从 node.js 发出 http 请求
@@ -28,7 +28,6 @@ $ bower install axios
 ```
 
 ## 例子
-
 ### 执行 GET 请求
 ``` javascript
 /* 向具有指定ID的用户发出请求 */

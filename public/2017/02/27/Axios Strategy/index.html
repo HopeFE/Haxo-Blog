@@ -10,6 +10,8 @@
     
     <title>
         
+            Axios全攻略 | 
+        
         Hope&#39;s Blog
     </title>
 
@@ -25,7 +27,7 @@
     <meta name="theme-color" content="#BDC3C7">
     <meta name="author" content="Hope">
     <meta name="description" content="李颖琨的网络日志">
-    <meta name="keywords" content="李颖琨的网络日志">
+    <meta name="keywords" content="前端,Vue,Hope的个人博客,HTML5">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -44,9 +46,9 @@
     <meta name="apple-mobile-web-app-title" content="Hope&#39;s Blog">
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://ygxdxx.coding.me">
+    <meta property="og:url" content="http://blog.ygxdxx.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hope&#39;s Blog">
+    <meta property="og:title" content="Axios全攻略 | Hope&#39;s Blog">
     <meta property="og:description" content="李颖琨的网络日志">
 
     <!--[if lte IE 9]>
@@ -224,7 +226,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#axios全攻略"><span class="post-toc-number">1.</span> <span class="post-toc-text">axios全攻略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引入方式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">引入方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行-GET-请求"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">执行 GET 请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行-POST-请求"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">执行 POST 请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行多个并发请求"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">执行多个并发请求</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#axios-API"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">axios API</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#axios-config"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">axios(config)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#axios-url-config"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">axios(url[, config])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求方法别名"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">请求方法别名</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#并发"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">并发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建实例"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">创建实例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实例方法"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">实例方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#请求配置"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">请求配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置默认值"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">配置默认值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局axios默认值"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">全局axios默认值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义实例默认值"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">自定义实例默认值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置优先级顺序"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">配置优先级顺序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#拦截器"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">拦截器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#消除"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">消除</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用application-x-www-form-urlencoded格式"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">使用application / x-www-form-urlencoded格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Node-js"><span class="post-toc-number">1.9.1.</span> <span class="post-toc-text">Node.js</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Promise</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Axios全攻略"><span class="post-toc-number">1.</span> <span class="post-toc-text">Axios全攻略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引入方式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">引入方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#例子"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">例子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行-GET-请求"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">执行 GET 请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行-POST-请求"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">执行 POST 请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行多个并发请求"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">执行多个并发请求</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#axios-API"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">axios API</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#axios-config"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">axios(config)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#axios-url-config"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">axios(url[, config])</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求方法别名"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">请求方法别名</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">1.3.3.1.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#并发"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">并发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建实例"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">创建实例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实例方法"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">实例方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#请求配置"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">请求配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置默认值"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">配置默认值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局axios默认值"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">全局axios默认值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义实例默认值"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">自定义实例默认值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置优先级顺序"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">配置优先级顺序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#拦截器"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">拦截器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#消除"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">消除</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用application-x-www-form-urlencoded格式"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">使用application / x-www-form-urlencoded格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Node-js"><span class="post-toc-number">1.9.1.</span> <span class="post-toc-text">Node.js</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Promise</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -252,7 +254,7 @@
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/2017_03_07_3.jpg)">
     
             <p class="article-headline-p">
-                
+                Axios全攻略
             </p>
         </div>
 
@@ -309,7 +311,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/02/27/Axios Strategy/" class="leancloud-views_num" data-flag-title="">
+                <span id="/2017/02/27/Axios Strategy/" class="leancloud-views_num" data-flag-title="Axios全攻略">
      &nbsp;浏览量
 </span>
 
@@ -321,7 +323,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://ygxdxx.coding.me//2017/02/27/Axios Strategy/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Axios全攻略&url=http://blog.ygxdxx.com//2017/02/27/Axios Strategy/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -330,7 +332,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://ygxdxx.coding.me//2017/02/27/Axios Strategy/index.html&via=Hope" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Axios全攻略&url=http://blog.ygxdxx.com//2017/02/27/Axios Strategy/index.html&via=Hope" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -339,7 +341,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ygxdxx.coding.me//2017/02/27/Axios Strategy/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.ygxdxx.com//2017/02/27/Axios Strategy/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -354,7 +356,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hope&#39;s Blog&title=&summary=李颖琨的网络日志&pics=http://ygxdxx.coding.me/img/favicon.png&url=http://ygxdxx.coding.me/2017/02/27/Axios Strategy/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hope&#39;s Blog&title=Axios全攻略&summary=李颖琨的网络日志&pics=http://blog.ygxdxx.com/img/favicon.png&url=http://blog.ygxdxx.com/2017/02/27/Axios Strategy/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -374,7 +376,7 @@
     
         <blockquote>
 <p>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：</p>
-<h1 id="axios全攻略"><a href="#axios全攻略" class="headerlink" title="axios全攻略"></a>axios全攻略</h1></blockquote>
+<h1 id="Axios全攻略"><a href="#Axios全攻略" class="headerlink" title="Axios全攻略"></a>Axios全攻略</h1></blockquote>
 <ul>
 <li>从浏览器中创建 XMLHttpRequest</li>
 <li>从 node.js 发出 http 请求</li>
@@ -487,8 +489,8 @@
     <!-- 多说评论框 start -->
     <div class="ds-thread"
         data-thread-key=""
-        data-url="http://ygxdxx.coding.me/2017/02/27/Axios Strategy/"
-        data-title="">
+        data-url="http://blog.ygxdxx.com/2017/02/27/Axios Strategy/"
+        data-title="Axios全攻略">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -623,6 +625,13 @@
 
     <!-- Pages  -->
   	
+        <li>
+            <a href="null" title="about">
+                
+                about
+            </a>
+        </li>
+  	
 
     <!-- Article Numebr  -->
     <li>
@@ -706,6 +715,10 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
+    <div style="display:block;width:100%;height:30px;text-indent:20px;">
+        友情链接：
+        <a href="http://blog.gejiawen.com/" title="蛋糕仙人的博客">蛋糕仙人的博客</a>
+    </div>
     
         <!-- Paradox Footer Left Section -->
         <div class="mdl-mini-footer--left-section sns-list">
@@ -798,7 +811,7 @@ It will not impact the appearance and can give developers a lot of support :)
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?ba7483bc78f876d2a1780fc963dff0f6";
+  hm.src = "https://hm.baidu.com/hm.js?c1af7fb42487daaea8e2ff546cf1f77a";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();

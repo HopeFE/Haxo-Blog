@@ -4,8 +4,8 @@
   
     
     <entry>
-      <title></title>
-      <url>http://ygxdxx.coding.me/2017/03/06/Vue2&amp;Weixin%20Develop%20Part%20%E2%85%A0/</url>
+      <title><![CDATA[Vue2全家桶与微信开发(一)]]></title>
+      <url>http://blog.ygxdxx.com/2017/03/06/Vue2&amp;Weixin%20Develop%20Part%20%E2%85%A0/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>此项目本身有一个APP了，为了方便将APP和微信端数据打通，需要用户微信和APP用户绑定。在开发的过程中单页面的模式在微信JS API的配置踩了很多坑，特别是IOS。由于本人表述能力和篇幅有限Orz，这里只介绍关键的实现步骤和代码，有些安全的地方和路由地方处理当时比较暴力没有细化，还望交流指导。</p>
 </blockquote>
@@ -81,11 +81,11 @@
     </entry>
     
     <entry>
-      <title></title>
-      <url>http://ygxdxx.coding.me/2017/02/27/Axios%20Strategy/</url>
+      <title><![CDATA[Axios全攻略]]></title>
+      <url>http://blog.ygxdxx.com/2017/02/27/Axios%20Strategy/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：</p>
-<h1 id="axios全攻略"><a href="#axios全攻略" class="headerlink" title="axios全攻略"></a>axios全攻略</h1></blockquote>
+<h1 id="Axios全攻略"><a href="#Axios全攻略" class="headerlink" title="Axios全攻略"></a>Axios全攻略</h1></blockquote>
 <ul>
 <li>从浏览器中创建 XMLHttpRequest</li>
 <li>从 node.js 发出 http 请求</li>
@@ -181,8 +181,8 @@
     </entry>
     
     <entry>
-      <title></title>
-      <url>http://ygxdxx.coding.me/2017/02/01/Vuex2&amp;Axios%20Develop/</url>
+      <title><![CDATA[Vuex2和Axios的开发]]></title>
+      <url>http://blog.ygxdxx.com/2017/02/01/Vuex2&amp;Axios%20Develop/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>总结笔者最近在项目中使用Vuex2和Axios的总结和小技巧，方便日后查看。本人能力有限，如有错误还请大大们指正探讨😭。</p>
 </blockquote>
@@ -232,8 +232,8 @@
     </entry>
     
     <entry>
-      <title></title>
-      <url>http://ygxdxx.coding.me/2017/01/29/Axios%20Config/</url>
+      <title><![CDATA[Axios的配置]]></title>
+      <url>http://blog.ygxdxx.com/2017/01/29/Axios%20Config/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>以前写Vue项目的时候都是使用vue-resource做为项目ajax库，在11月份的某一天尤大微博的更新表示ajax的库应该是通用的，放弃了对vue-resource的技术支持，推荐使用<a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">axios</a>。</p>
 </blockquote>
@@ -297,7 +297,7 @@
     
     <entry>
       <title></title>
-      <url>http://ygxdxx.coding.me/2017/01/28/Hello%20Hexo/</url>
+      <url>http://blog.ygxdxx.com/2017/01/28/Hello%20Hexo/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>今天鸡年的第一天，说了好久想搭建自己的博客记录开发的日常，结果一拖再拖Orz（拖延症伤不起）。今天花了一下午终于搭建完成。</p>
 </blockquote>
