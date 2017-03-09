@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Vue2全家桶与微信开发 | 
+        
+        Hope&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#BDC3C7">
+    <meta name="author" content="Hope">
+    <meta name="description" content="李颖琨的网络日志">
+    <meta name="keywords" content="前端,Vue,Hope的个人博客,HTML5">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Hope&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://blog.ygxdxx.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Vue2全家桶与微信开发 | Hope&#39;s Blog">
+    <meta property="og:description" content="李颖琨的网络日志">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #16A085;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #95A5A6 !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #95A5A6 !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #95A5A6 !important;
+    }
+
+    .toTop {
+        background: #95A5A6 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #95A5A6;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #95A5A6;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #95A5A6;
+    }
+
+    .post-toc a:hover {
+        color: #16A085;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5;
+        }
+
+        /* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/rainbow.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Vue2全家桶与微信开发"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vue2全家桶与微信开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#阅读需知"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">阅读需知</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#技术选型"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">技术选型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#技术点"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">技术点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#登陆逻辑流程图"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">登陆逻辑流程图</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关键技术点"><span class="post-toc-number">3.</span> <span class="post-toc-text">关键技术点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#授权登陆网址"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">授权登陆网址</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从URL上获取OPENID"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">从URL上获取OPENID</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#接口的处理"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">接口的处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本设置"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">基本设置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局请求处理"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">全局请求处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#全局接收处理"><span class="post-toc-number">3.3.3.</span> <span class="post-toc-text">全局接收处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#页面合法性检查"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">页面合法性检查</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检测是否授权登陆"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">检测是否授权登陆</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#是否在微信端"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">是否在微信端</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无权限页面"><span class="post-toc-number">3.4.3.</span> <span class="post-toc-text">无权限页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#微信支付的坑"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">微信支付的坑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#路由模式"><span class="post-toc-number">3.5.1.</span> <span class="post-toc-text">路由模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题原因"><span class="post-toc-number">3.5.2.</span> <span class="post-toc-text">问题原因</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决"><span class="post-toc-number">3.5.3.</span> <span class="post-toc-text">解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结尾"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">结尾</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/2017_03_09.jpg)">
+    
+            <p class="article-headline-p">
+                Vue2全家桶与微信开发
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Hope</strong>
+        <span>3月 06, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzElEQVR42u3aQW7cQAwEwP3/p5NrgEReNjleK2LpZMSGljUG3CE5r18rnxc2NjY2NjY2Njb2Ldmv8vOPF5V//us3XBb6x3f//jqtGRsbG/vZ7Dd/+i8YV2VdFVd5w9e8Uc3Y2NjYC9iVj0mL6EVU/YjrR4ONjY2NXY+l5tCn9SnY2NjY2KcC7PvGQ+kbsLGxsTeze9GSsivjqvRfvn2Who2NjX179qkg+eTXH91vY2NjY9+Y3Rv99MZPzXIHgypsbGzsDexTbUav6MmlzLhObGxs7AXss4VOFrSTYdNlhdjY2NgL2JPhzmRtnC4n0gYJGxsbexs7HeKkIVQfS1XeHwQeNjY29gJ2JZbSNqN3uOnieRRg2NjY2P85uzegSeOt/llpsI3229jY2NiPYE+GR2/G8YXSJwcRN0LY2NjYD2XPoygd96Qr5DRQsbGxsbexTwVY2jy8wqc+rvpoK4KNjY19A3Y6sk9Xv2evcqYrYWxsbOwN7HSBmkZdBVy/fJNexMTGxsbexg7CYFxcL+rSN2NjY2NvYKer3F509S7upHW+iUxsbGzsBew00ibX3CcNSRqT2NjY2BvY9VDpIdNWp3fcwVAJGxsb+6HsdNU6KXGyDK4fKzY2NvYGdtoknC2oHksHVhHY2NjYC9iTRe+pyzeVX0N9kISNjY29h52G0KR1qRxHb4wVDJWwsbGxH8qOV6et5etkqBQ0HtjY2Ngr2elgaBJF6XH0gg0bGxt7Azt90kNJlwr1QIqXCtjY2NgPZfeu1JxtVCYL3aBmbGxs7Eez64D5NZp0eVwPsNFWBBsbG/sR7PpFzHrTMl/ops9lPdjY2NjY5f/6z5e4lYhK4xAbGxsbu94wVBYAlaVv2jL9WCuCjY2NfRt2b6Az+Zn6IR44OGxsbOxHsyeXGuvxUzmC+oI5bYGwsbGxn8re82BjY2NjY2NjY2Pf5vkNpIX3qkwanrYAAAAASUVORK5CYII=">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Vue/">Vue</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/微信开发/">微信开发</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/03/06/Vue2&amp;Weixin-Develop/" class="leancloud-views_num" data-flag-title="Vue2全家桶与微信开发">
+     &nbsp;浏览量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Vue2全家桶与微信开发&url=http://blog.ygxdxx.com//2017/03/06/Vue2&amp;Weixin-Develop/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Vue2全家桶与微信开发&url=http://blog.ygxdxx.com//2017/03/06/Vue2&amp;Weixin-Develop/index.html&via=Hope" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.ygxdxx.com//2017/03/06/Vue2&amp;Weixin-Develop/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hope&#39;s Blog&title=Vue2全家桶与微信开发&summary=李颖琨的网络日志&pics=http://blog.ygxdxx.com/img/favicon.png&url=http://blog.ygxdxx.com/2017/03/06/Vue2&Weixin-Develop/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>此项目本身有一个APP了，为了方便将APP和微信端数据打通，需要用户微信和APP用户绑定。在开发的过程中单页面的模式在微信JS API的配置踩了很多坑，特别是IOS。由于本人表述能力和篇幅有限Orz，这里只介绍关键的实现步骤和代码，有些安全的地方和路由地方处理当时比较暴力没有细化，还望交流指导。</p>
+</blockquote>
+<h1 id="Vue2全家桶与微信开发"><a href="#Vue2全家桶与微信开发" class="headerlink" title="Vue2全家桶与微信开发"></a>Vue2全家桶与微信开发</h1><h2 id="阅读需知"><a href="#阅读需知" class="headerlink" title="阅读需知"></a>阅读需知</h2><ul>
+<li>默认您已经了解了微信授权登陆、微信JS API配置及微信支付的整体流程<a href="https://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html" target="_blank" rel="external">微信帮助文档</a></li>
+<li>Vue2.0（<a href="http://cn.vuejs.org/guide/" target="_blank" rel="external">Vue</a>、<a href="http://vuex.vuejs.org/zh-cn/index.html" target="_blank" rel="external">VueRouter</a>、<a href="http://vuex.vuejs.org/zh-cn/index.html" target="_blank" rel="external">Vuex</a>）全家桶基本知识，能熟悉70%以上的API</li>
+<li><a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">Axios</a>（Http请求组件）的基础知识（若不熟悉的可以看笔者的这2篇文章<a href="https://ygxdxx.coding.me/2017/02/27/axios%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="external">axios全攻略</a>,<a href="https://ygxdxx.coding.me/2017/02/01/Vuex2%E4%B8%8EAxios%E5%BC%80%E5%8F%91/" target="_blank" rel="external">Vuex2和Axios的配合</a>）</li>
+</ul>
+<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><ul>
+<li>移动前端Vue组件库<a href="https://vux.li/#/" target="_blank" rel="external">Vux</a></li>
+<li><a href="http://cn.vuejs.org/guide/" target="_blank" rel="external">Vue</a>、<a href="http://vuex.vuejs.org/zh-cn/index.html" target="_blank" rel="external">VueRouter</a>、<a href="http://vuex.vuejs.org/zh-cn/index.html" target="_blank" rel="external">Vuex</a>Vue三件套</li>
+<li>路由和Vuex同步组件<a href="https://github.com/vuejs/vuex-router-sync" target="_blank" rel="external">Vuex-router-sync</a></li>
+</ul>
+<p><strong>VueRouter选用的是Hash模式，避免每次都需要去注册WxConfig</strong></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>1、有些页面比如下单页面是不能分享的，在JS API内要配置该页面分享的是一个可以通过访问的页面如系统首页<br>2、该系统主要是在微信中应用的，在授权登录时，授权登陆页面会判断是否是微信内核（不得不说这节省了我一大笔开发，没有权限的时候直接往这跳就好了。简单暴力）<br>3、每个关键点都能引申很多的知识，这里篇幅有限，不在详细介绍</p>
+<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><h2 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h2><ol>
+<li>用户授权登陆，服务端从授权页面获取到OpenId（加密处理过的）后打开一个特定的URL（前端提供功能保存OPENID，回跳）,此页面从URL上取到URL在保存在Store中。</li>
+<li>分享出去的页面最好都配授权页面登陆页面，在授权登陆页面的URL上可以配置自己需要回跳的页面，方便服务端有针对性的二次跳转。</li>
+<li>接口返回状态码若为401，则表示没有权限，在Axios内跳转到登陆页面</li>
+<li>若检测到系统内没有OpenId则跳转到授权登陆页面（防止有人把URL复制出去分享在微信中打开报错）</li>
+</ol>
+<h2 id="登陆逻辑流程图"><a href="#登陆逻辑流程图" class="headerlink" title="登陆逻辑流程图"></a>登陆逻辑流程图</h2><p><img src="http://okkula0y9.bkt.clouddn.com/wvue17_3_5.jpg" alt="此处输入图片的描述"></p>
+<h1 id="关键技术点"><a href="#关键技术点" class="headerlink" title="关键技术点"></a>关键技术点</h1><h2 id="授权登陆网址"><a href="#授权登陆网址" class="headerlink" title="授权登陆网址"></a>授权登陆网址</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf565864b6a1a358d&amp;</div><div class="line">redirect_uri=http%3a%2f%2fpeifei.xxxx.com%2fnoa%2ftoken%3fpage%3dhttp%3a%2f%2fpeifei.xxx.com/index&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=123#wechat_redirect</div></pre></td></tr></table></figure>
+<p>网址需要实现的功能：</p>
+<ul>
+<li>获得OPENID传给前端(后端实现)</li>
+<li>授权登陆后能跳转到想去的页面（后端跳转后前端路由控制）</li>
+</ul>
+<h2 id="从URL上获取OPENID"><a href="#从URL上获取OPENID" class="headerlink" title="从URL上获取OPENID"></a>从URL上获取OPENID</h2><p><strong>vue-router和vuex的共同作用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'../../store'</span>     <span class="comment">//从根目录中引入store</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> [</div><div class="line">  &#123;</div><div class="line">    <span class="attr">path</span>: <span class="string">'/'</span>, </div><div class="line">    <span class="attr">component</span>:R_INDEX,</div><div class="line">    <span class="attr">children</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">'index/'</span>,</div><div class="line">        <span class="attr">redirect</span>:<span class="string">'/'</span></div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="comment">//服务端一律跳转到这个URL上</span></div><div class="line">    path: <span class="string">'/home/:id/:redirectUrl/'</span>, <span class="attr">redirect</span>: <span class="function"><span class="params">to</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">/**</span></div><div class="line">      * 通过dispatch触发保存openid的action</div><div class="line">      * 将URL上的OPENID保存到store中</div><div class="line">      */</div><div class="line">      store.dispatch(&#123;</div><div class="line">        <span class="attr">type</span>: <span class="string">'setOpenId'</span>,</div><div class="line">        <span class="attr">amount</span>: to.params.id</div><div class="line">      &#125;)</div><div class="line">      <span class="comment">//在回跳到需要来访的正确页面</span></div><div class="line">      <span class="keyword">return</span> <span class="string">`/<span class="subst">$&#123;to.params.redirectUrl&#125;</span>/`</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="接口的处理"><a href="#接口的处理" class="headerlink" title="接口的处理"></a>接口的处理</h2><p><strong>axios、vuex的使用结合</strong><br>此部分需要<code>Promise</code>和<code>Axios</code>的知识，若不熟悉请参阅笔者这2篇文章</p>
+<ol>
+<li><a href="https://ygxdxx.coding.me/2017/02/27/axios%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="external">axios全攻略</a></li>
+<li><a href="https://ygxdxx.coding.me/2017/02/01/Vuex2%E4%B8%8EAxios%E5%BC%80%E5%8F%91/" target="_blank" rel="external">Vuex2和Axios的配合</a></li>
+</ol>
+<h3 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* </span></div><div class="line">*  1.超时处理</div><div class="line">*  2.post设置</div><div class="line">*  3.开发环境与正式环境的区别</div><div class="line">*/</div><div class="line">axios.defaults.timeout = <span class="number">5000</span></div><div class="line">axios.defaults.headers.post[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded;charset=UTF-8'</span></div><div class="line">axios.defaults.baseURL =  (process.env.NODE_ENV == <span class="string">'development'</span> ? <span class="string">'http://192.168.1.15:8080/'</span> : <span class="string">'http://www.xxxx.com/'</span>)</div></pre></td></tr></table></figure>
+<h3 id="全局请求处理"><a href="#全局请求处理" class="headerlink" title="全局请求处理"></a>全局请求处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* </span></div><div class="line">*  1.请求拦截，全局增加token</div><div class="line">*  2.post设置</div><div class="line">*/</div><div class="line">axios.interceptors.request.use(<span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span>(config.method  === <span class="string">'post'</span> || config.method  === <span class="string">'put'</span> )&#123;</div><div class="line">    <span class="comment">//这里使用了qs这个库去序列化数据</span></div><div class="line">    config.data = qs.parse(config.data,&#123;<span class="attr">arrayFormat</span>:<span class="string">'brackets'</span>&#125;)</div><div class="line">  &#125;</div><div class="line">  <span class="comment">//全局追加openid</span></div><div class="line">  config.params = (</div><div class="line">      <span class="built_in">Object</span>.assign((config.params ? config.params : &#123;&#125;),&#123;<span class="string">"SESSION"</span>:store.state.common.openid&#125;)</div><div class="line">  )</div><div class="line">  <span class="keyword">return</span> config</div><div class="line">&#125;,(error) =&gt;&#123;</div><div class="line">  Vue.$vux.toast.show(&#123;<span class="attr">text</span>: <span class="string">'非法输入'</span>,<span class="attr">type</span>:<span class="string">'text'</span>,<span class="attr">time</span>:<span class="number">1000</span>&#125;)</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="全局接收处理"><a href="#全局接收处理" class="headerlink" title="全局接收处理"></a>全局接收处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* </span></div><div class="line">*  1.正确请求接口后，接口内返回的code若不为20000（前后端接口的规定），则表示是错误的参数</div><div class="line">*  2.若接口报错，并且报错的http状态码为401（前后端接口的规定）则表示用户没有该接口的权限，</div><div class="line">*  跳转到登陆页面</div><div class="line">*/</div><div class="line">axios.interceptors.response.use(<span class="function">(<span class="params">res</span>) =&gt;</span>&#123;</div><div class="line">  <span class="keyword">if</span>(res.data.code != <span class="string">'20000'</span>)&#123;</div><div class="line">    Vue.$vux.toast.show(&#123;<span class="attr">text</span>:res.data.message,<span class="attr">type</span>:<span class="string">'text'</span>,<span class="attr">time</span>:<span class="number">1000</span>&#125;)</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(res)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> res;</div><div class="line">&#125;, (error) =&gt; &#123;</div><div class="line">  <span class="keyword">if</span>(error.response)&#123;</div><div class="line">    <span class="keyword">switch</span> (error.response.status)&#123;</div><div class="line">      <span class="keyword">case</span> <span class="number">401</span>:</div><div class="line">        <span class="built_in">window</span>.location.href = <span class="string">`http://<span class="subst">$&#123;<span class="built_in">window</span>.<span class="built_in">document</span>.location.host&#125;</span>/?#/login/`</span></div><div class="line">        <span class="keyword">break</span></div><div class="line">      <span class="keyword">default</span>:</div><div class="line">        Vue.$vux.toast.show(&#123;<span class="attr">text</span>:<span class="string">'网络异常'</span>,<span class="attr">type</span>:<span class="string">'text'</span>,<span class="attr">time</span>:<span class="number">1000</span>&#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="页面合法性检查"><a href="#页面合法性检查" class="headerlink" title="页面合法性检查"></a>页面合法性检查</h2><p>因为整套环境都是由前端去控制页面路由，这里有很多地方需要我们去做权限的验证完善程序的健壮性，这对前端的考验很大。<br>虽然分享出去的页面处理比较暴力都是授权的链接，还是担心有人会复制URL出去在微信中打开所以需要做以下处理。</p>
+<ol>
+<li>验证是否在微信端</li>
+<li>store中是否存在openid，是否授权登陆后的进来的</li>
+<li>无权限操作的页面应该能返回正确的地方</li>
+</ol>
+<h3 id="检测是否授权登陆"><a href="#检测是否授权登陆" class="headerlink" title="检测是否授权登陆"></a>检测是否授权登陆</h3><p>我将授权登陆后的openid存在了store中，所以每次进行<strong>路由跳转</strong>的时候我只要检测store中是否存在openid若不存在则直接跳转到授权登录页面，授权登陆后服务端判断此openid是否存在，若存在则跳转到来访页面，不存在则跳转到login页面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span>(store.state.common.openId)&#123;</div><div class="line">    next();</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="built_in">window</span>.location.href=<span class="string">"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf565864b6a1a358d&amp;redirect_uri=http%3a%2f%2fpeifei.qmant.com%2fnoa%2ftoken%3fpage%3dhttp%3a%2f%2fpeifei.qmant.com/index&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=123#wechat_redirect"</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="是否在微信端"><a href="#是否在微信端" class="headerlink" title="是否在微信端"></a>是否在微信端</h3><p>授权登陆页面会检测，若不在微信端会提示如下。<br><img src="http://okkula0y9.bkt.clouddn.com/wx_2017_3_6.jpg" alt="此处输入图片的描述"></p>
+<h3 id="无权限页面"><a href="#无权限页面" class="headerlink" title="无权限页面"></a>无权限页面</h3><p>后端openid进行检测，若是无效的或者不对的openid会在请求接口的时候返回401，接口接收到401后，会跳转到登陆注册页面。</p>
+<h2 id="微信支付的坑"><a href="#微信支付的坑" class="headerlink" title="微信支付的坑"></a>微信支付的坑</h2><blockquote>
+<p>在遇到这个问题时困扰了好久，然后这篇博文<a href="http://blog.csdn.net/liufeng520/article/details/51354741" target="_blank" rel="external">开发单页应用(SPA)时候遇到的微信支付授权目录的坑</a>给了我指导，在此感谢作者</p>
+</blockquote>
+<h3 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h3><p>前端技术选型用的vuejs+vue-router，vue-router使用hashbang模式（使用hashbang也是为了避免微信jssdk的wx.config签名的坑）。在调用微信支付的时候(IOS)遇到提示”URL未注册”，这通常是因为没有在微信支付后台正确配置授权目录的问题，但是我遇到并不是这个。<br>我在调试的时候发现唤起微信支付时，IOS内打印日志中的URL和实际中的URL不一样安卓却是好的，我不知道是不是微信的BUG。后来在网上搜寻答案，发现是下面这个问题：</p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>首先把当前页面叫做<code>Current Page</code>。当我们从微信别的地方点击链接呼出微信浏览器时所落在的页面、或者点击微信浏览器的刷新按钮时所刷新的页面，我们叫做<code>Landing Page</code>。<br>举个例子，我们从任何地方点击链接进入页面A，然后依次浏览到B、C、D，那么Current Page就是D，而Landing Page是A，如果此时我们在D页面点击一下浏览器的刷新按钮，那么Landing Page就变成了D（以上均是在单页应用的环境下，即以hashbang模式通过js更改浏览器路径，直接href跳转的不算）。</p>
+<p>问题来了，在iOS和安卓下呼出微信支付的时候，微信支付判断当前路径的规则分别是：</p>
+<p>IOS：Landing Page<br>安卓：Current Page</p>
+<p>这就意味着，在ios环境下，任何一个页面都有可能成为支付页面（因为我无法预知和控制用户在哪个页面点微信浏览器的刷新按钮，或是用户通过哪个连接从外部进入到系统）。</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">3个页面用到微信支付：</div><div class="line">http://example.com/#/cart/index</div><div class="line">http://example.com/#/order/orderlist</div><div class="line">http://example.com/#/order/orderinfo</div></pre></td></tr></table></figure>
+<p>上述的3个链接根本不行啊，因为微信授权目录必须配置到最后一级目录，配置在根目录不行。</p>
+<p>将所有的路由#前加了一个？，于是微信浏览器妥妥的把井号“#”后面的内容给去掉了<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">原来路由链接：</div><div class="line">http://example.com/#/cart/index</div><div class="line">现在路由链接：</div><div class="line">http://example.com/?#/cart/index</div></pre></td></tr></table></figure></p>
+<p>我们只要将授权目录设置到根目录<code>http://example.com/</code>即可</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #95A5A6 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #95A5A6 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #95A5A6 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://blog.ygxdxx.com/2017/03/06/Vue2&Weixin-Develop/"
+        data-title="Vue2全家桶与微信开发">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/03/09/Vuejs-Component-Style-Guide/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/02/27/Axios-Strategy/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Hope's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        hopefullstack@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="null" title="about">
+                
+                about
+            </a>
+        </li>
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">6</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    <div style="display:block;width:100%;height:30px;text-indent:20px;">
+        友情链接：
+        <a href="http://blog.gejiawen.com/" title="蛋糕仙人的博客">蛋糕仙人的博客</a>
+    </div>
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/u/3312767933" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/HopeFE" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+     <!-- coding -->
+
+    
+        <a href="https://coding.net/u/ygxdxx" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-coding.png);">
+                <span class="visuallyhidden">coding</span>
+            </button><!--
+     --></a>
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Hope's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c1af7fb42487daaea8e2ff546cf1f77a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#BDC3C7'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #BDC3C7, 0 0 15px #BDC3C7'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#BDC3C7',
+        'border-left-color': '#BDC3C7'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize("v3gFPp6IXkBUNpa5uzkbGhmA-gzGzoHsz", "Wrvunr7zaxpEddYe8t6SvtuI");
+    </script>
+    <script>
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
+
+
+
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'Blog-Hope'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+    <script>
+    var searchFunc = function(path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
+
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

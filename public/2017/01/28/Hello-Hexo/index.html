@@ -10,8 +10,6 @@
     
     <title>
         
-            标签: Axios | 
-        
         Hope&#39;s Blog
     </title>
 
@@ -48,7 +46,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://blog.ygxdxx.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: Axios | Hope&#39;s Blog">
+    <meta property="og:title" content="Hope&#39;s Blog">
     <meta property="og:description" content="李颖琨的网络日志">
 
     <!--[if lte IE 9]>
@@ -200,154 +198,264 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
     
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用技术"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">使用技术</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#踩坑"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">踩坑</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结尾"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">结尾</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/201602011.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/hexo-logo.png)">
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Hope</strong>
+        <span>1月 28, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACW0lEQVR42u3aQVbDMAwFwNz/0rBlQVN9KXZCmax41CkeL2Qh6fj66OfAw8PDw8PDw8N7GO8oP7980YtPK+srb/X2hoeHh7eH9ybUlgH1NT8/PT+OeG94eHh4G3mvAu75mlfr00B/zq6sx8PDw/srvDT0nx8HHh4e3v/kHeFzzsbDw8N7Mq8e4nvlibRscUOtBQ8PD6/MS8P3zp+39vfw8PDwCrxeEO+x02GC5g7x8PDwFvPS5laaBNe/rdcww8PDw7uXl/6xeWE3LXBcUMbFw8PDG/OuavPXr4HJIZbSdDw8PLyNvN6GKqG8N6zQHPbCw8PDW8xLA309uKeHMtkDHh4e3k5er6nfezfeaOvg8PDw8Pbz0s31AvqE9Oa48fDw8Bbz0lGnyvq0GZYWlEejA3h4eHgXlXHrDftewXfSNkubYXh4eHireekX1ZPjuIjQaoPh4eHh3ctLSwmTxLp+FdXLEHh4eHh7eL2Wf5DghuXgelof/8eAh4eHt4A3LyukSXPvUN7sGQ8PD28xbzKEml4tk0Q5SMfx8PDwbuVVUth0XCD9ff0tPDw8vP28C0ZFWyWGNLkf9ffw8PDwFvDqm0gT63qynr6Fh4eHt5M3HwhIhwPq5YleYRcPDw9vNe8oP70LoF6kqKfj8UwZHh4e3gJeGtbTom2aTF98MeDh4eEt49UDdKUpla5MLxg8PDy8z+DNBwLmyToeHh7eM3n1UsKkgFu/DPDw8PDu4lWKEWkJuFd6SMcI8PDw8Pbz5iWAdFtBWXY+U4aHh4d3Ke/zHjw8PDw8PDw8vAc837FEfLgoHFKAAAAAAElFTkSuQmCC">
+        </ul>
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/01/Vuex2&amp;Axios-Develop/" style="font-size:0px;">Vuex2和Axios的开发</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Hexo/">Hexo</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/博客/">博客</a>
+    </ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-总结笔者最近在项目中使用Vuex2和Axios的总结和小技巧，方便日后查看。本人能力有限，如有错误还请大大们指正探讨😭。
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/01/28/Hello-Hexo/" class="leancloud-views_num" data-flag-title="">
+     &nbsp;浏览量
+</span>
 
+            </li>
+        </a>
+    
 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/01/Vuex2&amp;Axios-Develop/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Hope's avatar">
-            </div>
-            <div>
-                <strong>Hope</strong>
-                <span>2月 01, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
+    
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://blog.ygxdxx.com//2017/01/28/Hello-Hexo/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=&url=http://blog.ygxdxx.com//2017/01/28/Hello-Hexo/index.html&via=Hope" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.ygxdxx.com//2017/01/28/Hello-Hexo/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hope&#39;s Blog&title=&summary=李颖琨的网络日志&pics=http://blog.ygxdxx.com/img/favicon.png&url=http://blog.ygxdxx.com/2017/01/28/Hello-Hexo/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/20160130.jpg)">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/29/Axios-Config/" style="font-size:0px;">Axios的配置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-以前写Vue项目的时候都是使用vue-resource做为项目ajax库，在11月份的某一天尤大微博的更新表示ajax的库应该是通用的，放弃了对vue-resource的技术支持，推荐使用
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/29/Axios-Config/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Hope's avatar">
-            </div>
-            <div>
-                <strong>Hope</strong>
-                <span>1月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
                 
-            </span>
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>今天鸡年的第一天，说了好久想搭建自己的博客记录开发的日常，结果一拖再拖Orz（拖延症伤不起）。今天花了一下午终于搭建完成。</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>好的开头就是成功的一半</p>
+<h2 id="使用技术"><a href="#使用技术" class="headerlink" title="使用技术"></a>使用技术</h2><p>1.Hexo<br>前端建站神器，这里不多说了。<a href="https://hexo.io/zh-cn/docs/themes.html" target="_blank" rel="external">Hexo文档</a></p>
+<p>2.主题<br>当时在发现这个主题的时候是比较惊艳的，个人比较喜欢谷歌的这种风格，作者是位国人。很感谢无私的付出<br><a href="https://material.viosey.com/" target="_blank" rel="external">Material Theme</a></p>
+<p>3.Coding Pages<br>本来打算使用Github Pages，有时候墙的厉害。使用<a href="https://coding.net/help/doc/pages/index.html" target="_blank" rel="external">Coding Pages</a>做为承载网站。<br>主要使用「用户 Pages」类型，在个人项目里新建一个名为 {user_name}.coding.me 的项目，然后将Hexo中生成的Public文件夹作为Git的主目录即可。</p>
+<h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2><p>1._config.yml 是全站的控制文件，在配置的时候，有时候稍不注意将下面代码前的空格删掉了运行就会报错。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//source前面有一个空格</span></div><div class="line">source_dir: source</div></pre></td></tr></table></figure></p>
+<p>2.如果安装了新的主题，就需要到该主题下的_config.yml去配置。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>新的一年，以此篇开始。Fighting~</p>
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    
+
+    
 </div>
 
-        
-        
-    
 
-    
+                
 
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 10 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #95A5A6 !important;
     }
-</script>
-
-    
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #95A5A6 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #95A5A6 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://blog.ygxdxx.com/2017/01/28/Hello-Hexo/"
+        data-title="">
+    </div>
+    <!-- 多说评论框 end -->
 </div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/29/Axios-Config/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -517,6 +625,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
