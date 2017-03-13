@@ -221,16 +221,16 @@ http://example.com/?#/cart/index
   [3]: http://vuex.vuejs.org/zh-cn/index.html
   [4]: http://vuex.vuejs.org/zh-cn/index.html
   [5]: https://github.com/mzabriskie/axios
-  [6]: https://ygxdxx.coding.me/2017/02/27/axios%E5%85%A8%E6%94%BB%E7%95%A5/
-  [7]: https://ygxdxx.coding.me/2017/02/01/Vuex2%E4%B8%8EAxios%E5%BC%80%E5%8F%91/
+  [6]: https://blog.ygxdxx.com/2017/02/27/Axios-Strategy/
+  [7]: https://blog.ygxdxx.com/2017/02/01/Vuex2&Axios-Develop/
   [8]: https://vux.li/#/
   [9]: http://cn.vuejs.org/guide/
   [10]: http://vuex.vuejs.org/zh-cn/index.html
   [11]: http://vuex.vuejs.org/zh-cn/index.html
   [12]: https://github.com/vuejs/vuex-router-sync
   [13]: http://okkula0y9.bkt.clouddn.com/wvue17_3_5.jpg
-  [14]: https://ygxdxx.coding.me/2017/02/27/axios%E5%85%A8%E6%94%BB%E7%95%A5/
-  [15]: https://ygxdxx.coding.me/2017/02/01/Vuex2%E4%B8%8EAxios%E5%BC%80%E5%8F%91/
+  [14]: https://blog.ygxdxx.com/2017/02/27/Axios-Strategy/
+  [15]: https://blog.ygxdxx.com/2017/02/01/Vuex2&Axios-Develop/
   [16]: http://okkula0y9.bkt.clouddn.com/wx_2017_3_6.jpg
   [17]: http://blog.csdn.net/liufeng520/article/details/51354741
 
