@@ -396,7 +396,7 @@
 <li>自动转换JSON数据</li>
 <li>客户端支持防止 CSRF/XSRF</li>
 </ul>
-<h2 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install axios</div><div class="line">$ cnpm install axios <span class="comment">/*taobao源*/</span></div><div class="line">$ bower install axios</div><div class="line">或者使用cdn：</div><div class="line">&lt;script src=<span class="string">"https:/*unpkg.com/axios/dist/axios.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install axios</div><div class="line">$ cnpm install axios <span class="comment">/*taobao源*/</span></div><div class="line">$ bower install axios</div><div class="line">或者使用cdn：</div><div class="line">&lt;script src=<span class="string">"https:/*unpkg.com/axios/dist/axios.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="执行-GET-请求"><a href="#执行-GET-请求" class="headerlink" title="执行 GET 请求"></a>执行 GET 请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 向具有指定ID的用户发出请求 */</span></div><div class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/* 也可以通过 params 对象传递参数*/</span></div><div class="line">axios.get(<span class="string">'/user'</span>, &#123;</div><div class="line">    <span class="attr">params</span>: &#123;</div><div class="line">      <span class="attr">ID</span>: <span class="number">12345</span></div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
 <h3 id="执行-POST-请求"><a href="#执行-POST-请求" class="headerlink" title="执行 POST 请求"></a>执行 POST 请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">axios.post(<span class="string">'/user'</span>, &#123;</div><div class="line">    <span class="attr">firstName</span>: <span class="string">'Fred'</span>,</div><div class="line">    <span class="attr">lastName</span>: <span class="string">'Flintstone'</span></div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
 <h3 id="执行多个并发请求"><a href="#执行多个并发请求" class="headerlink" title="执行多个并发请求"></a>执行多个并发请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAccount</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserPermissions</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345/permissions'</span>);</div><div class="line">&#125;</div><div class="line">axios.all([getUserAccount(), getUserPermissions()])</div><div class="line">    <span class="comment">/* 两个请求现已完成  */</span></div><div class="line">  .then(axios.spread(<span class="function"><span class="keyword">function</span> (<span class="params">acct, perms</span>) </span>&#123;</div><div class="line"></div><div class="line">  &#125;)</div><div class="line">);</div></pre></td></tr></table></figure>
@@ -481,31 +481,15 @@
                 <!-- Post Comments -->
                 
                     
-    <!-- 使用多说评论 -->
-    <link rel="stylesheet" href="/css/duoshuo.min.css">
-<style>
-    #ds-thread #ds-reset .ds-post-button{
-        background-color: #95A5A6 !important;
-    }
-    #ds-wrapper #ds-reset .ds-icons-32{
-        background-color: #95A5A6 !important;
-    }
-    #ds-reset .ds-highlight {
-        color: #95A5A6 !important;
-    }
-</style>
-<div id="comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread"
-        data-thread-key=""
-        data-url="http://blog.ygxdxx.com/2017/02/27/Axios-Strategy/"
-        data-title="Axios全攻略">
-    </div>
-    <!-- 多说评论框 end -->
-</div>
 
 
 
+
+    <!-- 使用 网易 -->
+    <!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+<!-- UY END -->
 
 
                 
@@ -947,23 +931,6 @@ var _hmt = _hmt || [];
 
 
 
-
-    <!-- 多说公共 js 代码 start -->
-    <script type="text/javascript">
-        var duoshuoQuery = {
-            short_name: 'Blog-Hope'
-        };
-        (function() {
-            var ds = document.createElement('script');
-            ds.type = 'text/javascript';
-            ds.async = true;
-            ds.src = 'https://static.duoshuo.com/embed.js';
-            ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-             || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-    </script>
-    <!-- 多说公共 js 代码 end -->
 
 
 
