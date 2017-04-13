@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title><![CDATA[记一次Vue项目的实践]]></title>
+      <url>http://blog.ygxdxx.com/2017/04/13/vue-project-practice/</url>
+      <content type="html"><![CDATA[<h1 id="Vue小项目的最佳实践"><a href="#Vue小项目的最佳实践" class="headerlink" title="Vue小项目的最佳实践"></a>Vue小项目的最佳实践</h1><h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p> 目前一期只是为App内某个模块资讯模块文章的分享和APP下载，后续还会有更多的功能,为了项目可扩展、可伸缩结合了我以前的实践搭建了此项目<a href="https://github.com/HopeFE/Ant_App_H5" target="_blank" rel="external">项目地址</a>,如果这个简单的项目能给您带来帮助请给小哥哥⭐Star好不好（手动笔芯）。</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>根据分享出来的文章ID获取数据</li>
+<li>在网页内可以打开或者下载该APP</li>
+<li>微信平台的特殊处理<ul>
+<li>微信平台的屏蔽了scheme,文章页面的打开APP的功能需要出浮窗提示去浏览器中打开</li>
+<li>下载APP页面在微信中，IOS可以唤起APP Store,安卓则需要提示浮窗</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用技术须知"><a href="#使用技术须知" class="headerlink" title="使用技术须知"></a>使用技术须知</h2><p><code>Vue</code>,<code>VueRouter</code>,<code>Vuex</code>三件套不在多说</p>
+<h3 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h3><p>主要用来发起Http请求，想要详细了解具体使用方式和操作指南可以请参考笔者下面的几篇文章<br><a href="https://blog.ygxdxx.com/2017/02/27/Axios-Strategy/">Axios全攻略</a><br><a href="https://blog.ygxdxx.com/2017/02/01/Vuex2&amp;Axios-Develop/">Vuex2和Axios的开发</a><br>注意：因为<code>Axios</code>使用了<code>Promise</code>,适配低版本浏览器 一定要配合使用<code>es6-promise</code></p>
+<h3 id="Vuex-router-sync"><a href="#Vuex-router-sync" class="headerlink" title="Vuex-router-sync"></a>Vuex-router-sync</h3><p><a href="https://github.com/vuejs/vuex-router-sync" target="_blank" rel="external">Vuex-router-sync资料</a><br>功能：将Router中的 这些数据注入到Store中，方便我们调用。<br>在此项目中 我用此插件获取URL上的文章ID</p>
+<h3 id="Vue-meta"><a href="#Vue-meta" class="headerlink" title="Vue-meta"></a>Vue-meta</h3><p><a href="https://github.com/declandewet/vue-meta.org/zh-cn/index.html" target="_blank" rel="external">Vue-meta资料</a><br>功能：改变网页Head上的一些标签值。<br>在此项目中，我用此插件改变文章页面上的Title，在浏览器中标题不那么木讷。</p>
+<h3 id="Mobi-css"><a href="#Mobi-css" class="headerlink" title="Mobi.css"></a>Mobi.css</h3><p><a href="https://peachscript.github.io/vue-infinite-loading" target="_blank" rel="external">Mobi.css资料</a><br>功能：小而精美的手机端CSS布局库<br>在此项目中，不想用太大的UI框架也不想自己写太多的样式，选择了它。</p>
+<h3 id="Vue-infinite-loading"><a href="#Vue-infinite-loading" class="headerlink" title="Vue-infinite-loading"></a>Vue-infinite-loading</h3><p><a href="https://peachscript.github.io/vue-infinite-loading" target="_blank" rel="external">Vue-infinite-loading资料</a><br>功能：缓解加载数据时页面空白的尴尬，可自定义loading动画。</p>
+<h2 id="关键实现"><a href="#关键实现" class="headerlink" title="关键实现"></a>关键实现</h2><h3 id="URL上获取文章ID"><a href="#URL上获取文章ID" class="headerlink" title="URL上获取文章ID"></a>URL上获取文章ID</h3><p>和APP的同学商量了我们就用<a href="http://xxxx/article/:id的方式去定义分享出去文章地址，页面通过获得URL上的" target="_blank" rel="external">http://xxxx/article/:id的方式去定义分享出去文章地址，页面通过获得URL上的</a><br>ID去请求相对应的数据。我是使用<code>Vuex-router-sync</code>直接从Store中获得ID的<code>rootState.route.params.id</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// 文件src/modules/action</div><div class="line">/** 获取文章信息 */</div><div class="line">export const getArticle = (&#123; rootState, commit &#125;) =&gt; &#123;</div><div class="line">  return new Promise((resolve, reject) =&gt; &#123;</div><div class="line">    axios(&#123;</div><div class="line">      method: &apos;get&apos;,</div><div class="line">      url: &apos;share/news_details&apos;,</div><div class="line">      params: &#123;</div><div class="line">        news_id: rootState.route.params.id</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">    .then((response) =&gt; &#123;</div><div class="line">      commit(types.ARTICLE, response.data.data)</div><div class="line">      resolve(response)</div><div class="line">    &#125;)</div><div class="line">    .catch((error) =&gt; &#123;</div><div class="line">      reject(error)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Store中获取环境区别"><a href="#Store中获取环境区别" class="headerlink" title="Store中获取环境区别"></a>Store中获取环境区别</h3><p>在每个页面进行操作时，我们需要鉴别当前系统是IOS或者安卓，每次通过正则去鉴别UA里的字符串太麻烦，所以我将此放到Store中，方便所有的组件使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 文件src/modules/store</div><div class="line">const state = &#123;</div><div class="line">  system: (/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase()) ? &apos;IOS&apos; : &apos;Android&apos;),</div><div class="line">  article: &#123;&#125;,</div><div class="line">  isWeixin: (/MicroMessenger/ig).test(navigator.userAgent)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="合理的处置异常"><a href="#合理的处置异常" class="headerlink" title="合理的处置异常"></a>合理的处置异常</h3><p>我们去加载数据时可能会遇到失败的情况，这里需要对页面有一个良好的处理，这里我主要使用<code>Vue-infinite-loading</code>去实现页面上的效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">_onInfinite () &#123;</div><div class="line">  this.getArticle().then(() =&gt; &#123;</div><div class="line">    // 完成之后loading消失 </div><div class="line">    this.$refs.infiniteLoading.$emit(&apos;$InfiniteLoading:loaded&apos;)</div><div class="line">    this.$refs.infiniteLoading.$emit(&apos;$InfiniteLoading:complete&apos;)</div><div class="line">  &#125;)</div><div class="line">  .catch(() =&gt; &#123;</div><div class="line">    // 异常之后页面的展示  执行下方slot=&quot;no-results&quot;部分</div><div class="line">    this.$refs.infiniteLoading.$emit(&apos;$InfiniteLoading:complete&apos;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;infinite-loading :on-infinite=&quot;_onInfinite&quot; ref=&quot;infiniteLoading&quot; spinner=&quot;bubbles&quot;&gt;</div><div class="line">  &lt;span slot=&quot;no-results&quot;&gt;好像来到了奇怪的地方~&lt;/span&gt;</div><div class="line">  &lt;span slot=&quot;no-more&quot;&gt;&lt;/span&gt;</div><div class="line">&lt;/infinite-loading&gt;</div></pre></td></tr></table></figure>
+<h3 id="keep-alive组件复用"><a href="#keep-alive组件复用" class="headerlink" title="keep-alive组件复用"></a>keep-alive组件复用</h3><p>这是一个很能提高页面性能的标签，会将已使用过的不活动的组件缓存起来而不是销毁。在性能不太好的手机上，模版的渲染也是需要一定时间的，我们可以用这个标签将缓存曾经使用过的组件（页面），在此组件激活时刷新里面的数据即可。激活时使用<a href="https://vuefe.cn/v2/api/#activated" target="_blank" rel="external">activated</a>这个生命周期<br><img src="http://okkula0y9.bkt.clouddn.com/20170413.jpg" alt="activated"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">activated () &#123;</div><div class="line">  this.clearArticle() //激活时先清除Store中的数据 因为$InfiniteLoading是根据页面高度来发起请求的</div><div class="line">  this.$refs.infiniteLoading.$emit(&apos;$InfiniteLoading:reset&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="组件代码的规范"><a href="#组件代码的规范" class="headerlink" title="组件代码的规范"></a>组件代码的规范</h3><blockquote>
+<p>始终基于模块的方式来构建你的 app，每一个子模块只做一件事情。<br>Vue.js 的设计初衷就是帮助开发者更好的开发界面模块。一个模块是应用程序中独立的一个部分。</p>
+</blockquote>
+<p>我们需要将我们<code>*.vue</code>文件按照一定的结构组织，使得组件便于理解，主要有以下几点比较重要：</p>
+<ul>
+<li>导出一个清晰、组织有序的组件，使得代码易于阅读和理解。同时也便于标准化。</li>
+<li>按首字母排序属性，data, computed, watches 和 methods 使得属性便于查找。</li>
+<li>合理组织，使得组件易于阅读。(name; extends; props, data and computed; components; watch and methods; lifecycle methods, 等.);</li>
+<li>使用 name 属性。借助于vue devtools可以让你更方便的测试</li>
+<li>合理的 CSS 结构，如 BEM 或 rscss - 详情?;</li>
+<li>使用单文件 .vue 文件格式来组件代码</li>
+</ul>
+<p>同时配合<code>ESLint</code>将代码写的更加规范和阅读，我这边使用<code>Standard</code>的风格，在VScode中也开启了Standard的验证。<br><a href="http://eslint.org/" target="_blank" rel="external">ESLint官网</a><br><a href="https://github.com/feross/standard/blob/master/docs/README-zhcn.md" target="_blank" rel="external">JavaScript 代码规范-Standard风格</a><br>组件规范也可以参考笔者这篇：<a href="https://blog.ygxdxx.com/2017/03/09/Vuejs-Component-Style-Guide/">Vue.js 组件编码规范</a></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>看起来此项目简单，实则上用了不少插件去实现需要较强的动手（第三方坑也多，选择一个好的插件得先去github上看看，作者的代码质量），需要保持一定的弹性方便日后的扩展也要避免过度的设计。大家若想要加速自己的开发速度，可以多逛逛<a href="https://github.com/vuejs/awesome-vue#libraries--plugins" target="_blank" rel="external">Vue awesome</a>上看看大多数都是高质量的插件，其实很多轮子都有人造好了，选取好的直接拿来用岂不妙哉？</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Vue.js 组件编码规范]]></title>
       <url>http://blog.ygxdxx.com/2017/03/09/Vuejs-Component-Style-Guide/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -318,9 +369,9 @@
         
         <tags>
             
-            <tag> 微信开发 </tag>
-            
             <tag> Vue </tag>
+            
+            <tag> 微信开发 </tag>
             
         </tags>
         
@@ -342,7 +393,7 @@
 <li>自动转换JSON数据</li>
 <li>客户端支持防止 CSRF/XSRF</li>
 </ul>
-<h2 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install axios</div><div class="line">$ cnpm install axios <span class="comment">/*taobao源*/</span></div><div class="line">$ bower install axios</div><div class="line">或者使用cdn：</div><div class="line">&lt;script src=<span class="string">"https:/*unpkg.com/axios/dist/axios.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h2 id="引入方式"><a href="#引入方式" class="headerlink" title="引入方式"></a>引入方式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install axios</div><div class="line">$ cnpm install axios <span class="comment">/*taobao源*/</span></div><div class="line">$ bower install axios</div><div class="line">或者使用cdn：</div><div class="line">&lt;script src=<span class="string">"https:/*unpkg.com/axios/dist/axios.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="执行-GET-请求"><a href="#执行-GET-请求" class="headerlink" title="执行 GET 请求"></a>执行 GET 请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 向具有指定ID的用户发出请求 */</span></div><div class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div><div class="line"><span class="comment">/* 也可以通过 params 对象传递参数*/</span></div><div class="line">axios.get(<span class="string">'/user'</span>, &#123;</div><div class="line">    <span class="attr">params</span>: &#123;</div><div class="line">      <span class="attr">ID</span>: <span class="number">12345</span></div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
 <h3 id="执行-POST-请求"><a href="#执行-POST-请求" class="headerlink" title="执行 POST 请求"></a>执行 POST 请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">axios.post(<span class="string">'/user'</span>, &#123;</div><div class="line">    <span class="attr">firstName</span>: <span class="string">'Fred'</span>,</div><div class="line">    <span class="attr">lastName</span>: <span class="string">'Flintstone'</span></div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
 <h3 id="执行多个并发请求"><a href="#执行多个并发请求" class="headerlink" title="执行多个并发请求"></a>执行多个并发请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAccount</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserPermissions</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345/permissions'</span>);</div><div class="line">&#125;</div><div class="line">axios.all([getUserAccount(), getUserPermissions()])</div><div class="line">    <span class="comment">/* 两个请求现已完成  */</span></div><div class="line">  .then(axios.spread(<span class="function"><span class="keyword">function</span> (<span class="params">acct, perms</span>) </span>&#123;</div><div class="line"></div><div class="line">  &#125;)</div><div class="line">);</div></pre></td></tr></table></figure>
@@ -467,9 +518,9 @@
         
         <tags>
             
-            <tag> Vue </tag>
-            
             <tag> Axios </tag>
+            
+            <tag> Vue </tag>
             
             <tag> Vuex2 </tag>
             

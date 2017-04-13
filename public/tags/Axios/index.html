@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: Axios | 
+            标签: axios | 
         
         Hope&#39;s Blog
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://blog.ygxdxx.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: Axios | Hope&#39;s Blog">
+    <meta property="og:title" content="标签: axios | Hope&#39;s Blog">
     <meta property="og:description" content="李颖琨的网络日志">
 
     <!--[if lte IE 9]>
@@ -212,24 +212,23 @@
     <!-- Post Thumbnail -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/201602011.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/2017_03_07_3.jpg)">
     
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/01/Vuex2&amp;Axios-Develop/" style="font-size:0px;">Vuex2和Axios的开发</a></p>
+        <p class="article-headline-p"><a href="/2017/02/27/Axios-Strategy/" style="font-size:0px;">Axios全攻略</a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
             
-总结笔者最近在项目中使用Vuex2和Axios的总结和小技巧，方便日后查看。本人能力有限，如有错误还请大大们指正探讨😭。
-
+axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：
 
         
         &nbsp;&nbsp;&nbsp;
         <span>
-            <a href="/2017/02/01/Vuex2&amp;Axios-Develop/" target="_self">继续阅读</a>
+            <a href="/2017/02/27/Axios-Strategy/" target="_self">继续阅读</a>
         </span>
     </div>
     <!-- Post_entry Info-->
@@ -241,7 +240,7 @@
             </div>
             <div>
                 <strong>Hope</strong>
-                <span>2月 01, 2017</span>
+                <span>2月 27, 2017</span>
             </div>
         </div>
         <div id="post_entry-right-info">
@@ -251,59 +250,11 @@
             </span>
 
             
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://okkula0y9.bkt.clouddn.com/20160130.jpg)">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/29/Axios-Config/" style="font-size:0px;">Axios的配置</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-以前写Vue项目的时候都是使用vue-resource做为项目ajax库，在11月份的某一天尤大微博的更新表示ajax的库应该是通用的，放弃了对vue-resource的技术支持，推荐使用
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/29/Axios-Config/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="Hope's avatar">
-            </div>
-            <div>
-                <strong>Hope</strong>
-                <span>1月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
+                <!-- Comment Number -->
+                &nbsp;|&nbsp;
+                <span class="post_entry-comment" >
+                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
+                </span>
             
 
             <!-- Post Views -->
@@ -415,7 +366,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a>
+            <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">2</span></a>
         </ul>
     </li>
 
@@ -440,7 +391,7 @@
     <li>
         <a href="/archives">
             文章总数
-            <span class="sidebar-badge">6</span>
+            <span class="sidebar-badge">7</span>
         </a>
     </li>
 </ul>
@@ -733,6 +684,23 @@ var _hmt = _hmt || [];
 
 
 
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'Blog-Hope'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
 
 
 
