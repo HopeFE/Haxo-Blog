@@ -3,6 +3,7 @@ layout: '[_posts]'
 title: Vue.js 组件编码规范
 date: 2017-03-09 14:32:29
 tags: [Vue,Vue组件]
+thumbnail: http://okkula0y9.bkt.clouddn.com/2017_3_06.jpg?imageView2/0/q/75|imageslim
 ---
 
 
