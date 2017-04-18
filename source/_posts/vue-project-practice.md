@@ -1,6 +1,6 @@
 ---
 layout: _posts
-title: '记一次Vue项目的实践'
+title: 'Vue小项目的最佳实践'
 date: 2017-04-13 13:36:52
 tags: Vue
 thumbnail: http://okkula0y9.bkt.clouddn.com/2017_4_13.jpg?imageView2/0/q/75|imageslim
