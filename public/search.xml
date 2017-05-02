@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title><![CDATA[记一次Vue项目的实践]]></title>
+      <title><![CDATA[Vue小项目的最佳实践]]></title>
       <url>http://blog.ygxdxx.com/2017/04/13/vue-project-practice/</url>
       <content type="html"><![CDATA[<h1 id="Vue小项目的最佳实践"><a href="#Vue小项目的最佳实践" class="headerlink" title="Vue小项目的最佳实践"></a>Vue小项目的最佳实践</h1><h2 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h2><p> 目前一期只是为App内某个模块资讯模块文章的分享和APP下载，后续还会有更多的功能,为了项目可扩展、可伸缩结合了我以前的实践搭建了此项目<a href="https://github.com/HopeFE/Ant_App_H5" target="_blank" rel="external">项目地址</a>,如果这个简单的项目能给您带来帮助请给小哥哥⭐Star好不好（手动笔芯）。</p>
 <h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
@@ -381,8 +381,9 @@
       <title><![CDATA[Axios全攻略]]></title>
       <url>http://blog.ygxdxx.com/2017/02/27/Axios-Strategy/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端，它本身具有以下特征：</p>
-<h1 id="Axios全攻略"><a href="#Axios全攻略" class="headerlink" title="Axios全攻略"></a>Axios全攻略</h1></blockquote>
+<p>，它本身具有以下特征：</p>
+<h1 id="Axios全攻略"><a href="#Axios全攻略" class="headerlink" title="Axios全攻略"></a>Axios全攻略</h1><p>转<a href="https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="external">axios全攻略 | 羸弱的小金鱼</a>axios 是一个基于Promise 用于浏览器和 nodejs 的 HTTP 客户端,原文地址：</p>
+</blockquote>
 <ul>
 <li>从浏览器中创建 XMLHttpRequest</li>
 <li>从 node.js 发出 http 请求</li>

@@ -19,7 +19,6 @@ thumbnail: http://okkula0y9.bkt.clouddn.com/2017_4_13.jpg?imageView2/0/q/75|imag
     - 微信平台的屏蔽了scheme,文章页面的打开APP的功能需要出浮窗提示去浏览器中打开
     - 下载APP页面在微信中，IOS可以唤起APP Store,安卓则需要提示浮窗
   
-  
 ## 使用技术须知
 `Vue`,`VueRouter`,`Vuex`三件套不在多说
 
